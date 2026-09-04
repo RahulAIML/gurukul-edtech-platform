@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { championshipProgramsList } from '@/data/landingData';
 import { ArrowRight, Info } from 'lucide-react';
+import { Carousel } from '@/components/ui/Carousel';
 
 export const ChampionshipPrograms: React.FC = () => {
   const router = useRouter();
@@ -101,9 +102,9 @@ export const ChampionshipPrograms: React.FC = () => {
           </div>
         </div>
 
-        {/* 5 Program Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {championshipProgramsList.map((program) => {
+        {/* Program Card (shared between grid and mobile carousel) */}
+        {(() => {
+          const renderCard = (program: (typeof championshipProgramsList)[number]) => {
             const isAvailable = program.status === 'available';
 
             return (
@@ -114,7 +115,7 @@ export const ChampionshipPrograms: React.FC = () => {
                     router.push('/programs/data-science/overview');
                   }
                 }}
-                className={`relative flex flex-col justify-between rounded-2xl p-6 transition-all duration-300 ${
+                className={`relative flex flex-col justify-between rounded-2xl p-6 transition-all duration-300 h-full ${
                   isAvailable
                     ? 'bg-white border-2 border-blue-400/80 shadow-card hover:shadow-card-hover hover:-translate-y-1.5 cursor-pointer ring-4 ring-blue-50'
                     : 'bg-white border border-slate-200 shadow-sm opacity-85 hover:opacity-100 hover:border-slate-300'
@@ -175,8 +176,24 @@ export const ChampionshipPrograms: React.FC = () => {
                 </div>
               </div>
             );
-          })}
-        </div>
+          };
+
+          return (
+            <>
+              {/* Tablet / Desktop: full grid */}
+              <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                {championshipProgramsList.map((program) => renderCard(program))}
+              </div>
+
+              {/* Mobile: auto-advancing swipeable carousel */}
+              <div className="sm:hidden">
+                <Carousel autoplay autoplayDelay={4000}>
+                  {championshipProgramsList.map((program) => renderCard(program))}
+                </Carousel>
+              </div>
+            </>
+          );
+        })()}
 
         {/* Subtitle / Helper info below cards */}
         <div className="mt-8 flex items-center justify-center gap-2 text-xs text-slate-500 text-center">

@@ -2,22 +2,41 @@
 
 import React, { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 interface CarouselProps {
   children: React.ReactNode[];
   className?: string;
+  /** Auto-advance left to right; pauses on hover/touch and respects reduced-motion. */
+  autoplay?: boolean;
+  autoplayDelay?: number;
+  loop?: boolean;
 }
 
-export const Carousel: React.FC<CarouselProps> = ({ children, className = '' }) => {
+export const Carousel: React.FC<CarouselProps> = ({
+  children,
+  className = '',
+  autoplay = false,
+  autoplayDelay = 3500,
+  loop = false,
+}) => {
   const prefersReducedMotion =
     typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: false,
-    align: 'start',
-    dragFree: false,
-    skipSnaps: prefersReducedMotion,
-  });
+  const plugins =
+    autoplay && !prefersReducedMotion
+      ? [Autoplay({ delay: autoplayDelay, stopOnInteraction: false, stopOnMouseEnter: true })]
+      : [];
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: loop || autoplay,
+      align: 'start',
+      dragFree: false,
+      skipSnaps: prefersReducedMotion,
+    },
+    plugins
+  );
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const onSelect = useCallback(() => {
