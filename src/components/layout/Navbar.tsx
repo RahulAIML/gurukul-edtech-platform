@@ -168,11 +168,25 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
 
           {/* Action Buttons */}
           <div className="hidden md:flex items-center gap-3">
+            {/* Persistent search pill (xl+), icon-only trigger below xl */}
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
               aria-label="Search"
-              className={`p-2 rounded-full transition-colors ${
+              className={`hidden xl:flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-medium transition-colors ${
+                isDark
+                  ? 'border-slate-700 text-slate-400 hover:bg-slate-800'
+                  : 'border-slate-200 text-slate-500 hover:border-purple-300 hover:bg-purple-50/50'
+              }`}
+            >
+              <Search className="w-4 h-4" />
+              <span>What do you want to learn?</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setSearchOpen(true)}
+              aria-label="Search"
+              className={`xl:hidden p-2 rounded-full transition-colors ${
                 isDark ? 'text-slate-200 hover:bg-slate-800' : 'text-slate-600 hover:bg-slate-100 hover:text-purple-700'
               }`}
             >

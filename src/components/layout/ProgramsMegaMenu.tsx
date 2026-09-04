@@ -51,7 +51,7 @@ export const ProgramsMegaMenu: React.FC<ProgramsMegaMenuProps> = ({ open, onClos
                         <Link
                           href="/programs/data-science"
                           onClick={onClose}
-                          className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-bold text-slate-900 bg-white border border-purple-200 shadow-sm"
+                          className="flex items-center gap-2 pl-3 pr-3 py-2.5 rounded-r-lg text-sm font-bold text-purple-900 bg-purple-50 border-l-4 border-purple-600"
                         >
                           <span
                             className="w-2 h-2 rounded-full flex-shrink-0"
@@ -89,6 +89,9 @@ export const ProgramsMegaMenu: React.FC<ProgramsMegaMenuProps> = ({ open, onClos
                         sizes="96px"
                         className="object-cover"
                       />
+                      <div className="absolute top-0 left-0 px-2 py-0.5 rounded-br-lg bg-amber-500 text-white text-[9px] font-black uppercase tracking-wide shadow-[inset_0_2px_4px_rgba(0,0,0,0.25)]">
+                        Popular
+                      </div>
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="text-sm font-black text-slate-950 font-heading leading-snug">

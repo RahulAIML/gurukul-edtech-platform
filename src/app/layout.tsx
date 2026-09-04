@@ -35,6 +35,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
+      <head>
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="min-h-screen bg-white text-slate-900 selection:bg-purple-500 selection:text-white">
         <PageTransition>{children}</PageTransition>
       </body>
