@@ -321,7 +321,9 @@ export const dataScienceProgram: ProgramDetailData = {
       tools: ['Python', 'SQL', 'Git', 'Streamlit'],
       project: {
         name: 'Enterprise Market Intelligence Engine',
-        description: 'Clean, model, and visualize 500,000+ transaction records into an executive analytical decision tool.'
+        description: 'Clean, model, and visualize 500,000+ transaction records into an executive analytical decision tool.',
+        publicSummary: 'A guided checkpoint project applying end-to-end data cleaning, modeling, and executive-ready visualization to a large real-world dataset.',
+        confidential: true,
       }
     },
     {
@@ -361,7 +363,9 @@ export const dataScienceProgram: ProgramDetailData = {
       tools: ['Full Data Stack', 'AWS/GCP', 'Docker', 'FastAPI', 'Streamlit'],
       project: {
         name: 'Autonomous Multi-Modal Enterprise Intelligence System',
-        description: 'End-to-end production application combining predictive ML models and GenAI RAG search over proprietary data.'
+        description: 'End-to-end production application combining predictive ML models and GenAI RAG search over proprietary data.',
+        publicSummary: 'A capstone-grade production application combining predictive modeling with a Generative AI search experience, deployed as a live containerized service.',
+        confidential: true,
       }
     }
   ],
@@ -386,20 +390,26 @@ export const dataScienceProgram: ProgramDetailData = {
       title: 'E-commerce Dynamic Pricing & Demand Forecasting',
       type: 'Mini Project',
       description: 'Build an automated time-series forecasting engine that predicts inventory demand and adjusts real-time pricing to maximize margins.',
+      publicSummary: 'Build an automated forecasting engine that predicts demand and recommends real-time pricing to maximize margins.',
+      confidential: true,
       techStack: ['Python', 'Prophet', 'Pandas', 'FastAPI'],
-      outcomes: ['14% profit uplift simulation', 'Interactive pricing dashboard']
+      outcomes: ['Simulated profit-uplift benchmark', 'Interactive pricing dashboard']
     },
     {
       title: 'High-Risk Customer Churn Prediction Engine',
       type: 'Checkpoint Project',
       description: 'Train and validate an ensemble classification pipeline with advanced feature engineering to identify at-risk subscribers before contract renewal.',
+      publicSummary: 'Train and validate a classification pipeline with advanced feature engineering to flag at-risk customers before they churn.',
+      confidential: true,
       techStack: ['Scikit-Learn', 'XGBoost', 'SHAP', 'Streamlit'],
-      outcomes: ['89.4% ROC-AUC score', 'Explainable AI feature importance report']
+      outcomes: ['High-accuracy predictive benchmark', 'Explainable AI feature importance report']
     },
     {
       title: 'Autonomous Multi-Modal Financial Intelligence Platform',
       type: 'Capstone Project',
       description: 'Full-stack production platform ingesting earnings reports, running sentiment analysis, and predicting price volatility with deployed REST endpoints.',
+      publicSummary: 'A full-stack production platform that ingests real documents, runs sentiment analysis, and serves predictions through deployed REST endpoints.',
+      confidential: true,
       techStack: ['FastAPI', 'Docker', 'PostgreSQL', 'LangChain', 'OpenAI'],
       outcomes: ['Deployed live containerized app', 'Complete portfolio case study']
     }

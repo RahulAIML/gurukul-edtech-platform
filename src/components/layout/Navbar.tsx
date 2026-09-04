@@ -1,11 +1,13 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { GurukulLogo } from '@/components/ui/GurukulLogo';
 import { navigationLinks } from '@/data/landingData';
-import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
+import { ProgramsMegaMenu } from './ProgramsMegaMenu';
+import { SearchOverlay } from './SearchOverlay';
+import { Menu, X, ChevronDown, ArrowRight, Search } from 'lucide-react';
 
 interface NavbarProps {
   variant?: 'light' | 'dark';
@@ -13,9 +15,13 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileProgramsOpen, setMobileProgramsOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
+  const [programsMenuOpen, setProgramsMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const isDark = variant === 'dark';
 
@@ -26,6 +32,16 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const openPrograms = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setProgramsMenuOpen(true);
+  };
+
+  const scheduleClosePrograms = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setProgramsMenuOpen(false), 200);
+  };
 
   return (
     <header
@@ -45,6 +61,34 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-7">
             {navigationLinks.map((link) => {
+              if (link.label === 'Programs') {
+                return (
+                  <div
+                    key={link.label}
+                    className="relative"
+                    onMouseEnter={openPrograms}
+                    onMouseLeave={scheduleClosePrograms}
+                  >
+                    <button
+                      type="button"
+                      aria-haspopup="menu"
+                      aria-expanded={programsMenuOpen}
+                      onClick={() => setProgramsMenuOpen((v) => !v)}
+                      className={`flex items-center gap-1.5 text-sm font-medium transition-colors ${
+                        isDark ? 'text-slate-200 hover:text-white' : 'text-slate-700 hover:text-purple-700'
+                      }`}
+                    >
+                      {link.label}
+                      <ChevronDown
+                        className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${
+                          programsMenuOpen ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                  </div>
+                );
+              }
+
               if (link.children) {
                 return (
                   <div
@@ -123,7 +167,18 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
           </nav>
 
           {/* Action Buttons */}
-          <div className="hidden md:flex items-center gap-3.5">
+          <div className="hidden md:flex items-center gap-3">
+            <button
+              type="button"
+              onClick={() => setSearchOpen(true)}
+              aria-label="Search"
+              className={`p-2 rounded-full transition-colors ${
+                isDark ? 'text-slate-200 hover:bg-slate-800' : 'text-slate-600 hover:bg-slate-100 hover:text-purple-700'
+              }`}
+            >
+              <Search className="w-5 h-5" />
+            </button>
+
             <Link
               href="/#login"
               className={`px-5 py-2 text-sm font-semibold rounded-full border transition-all duration-200 ${
@@ -144,8 +199,15 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile Menu Buttons */}
+          <div className="md:hidden flex items-center gap-1">
+            <button
+              onClick={() => setSearchOpen(true)}
+              aria-label="Search"
+              className={`p-2 rounded-lg ${isDark ? 'text-slate-200 hover:bg-slate-800' : 'text-slate-700 hover:bg-slate-100'}`}
+            >
+              <Search className="w-5 h-5" />
+            </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`p-2 rounded-lg ${
@@ -159,6 +221,18 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
         </div>
       </div>
 
+      {/* Desktop Programs Mega Menu */}
+      <div onMouseEnter={openPrograms} onMouseLeave={scheduleClosePrograms}>
+        <ProgramsMegaMenu
+          open={programsMenuOpen}
+          onClose={() => setProgramsMenuOpen(false)}
+          onOpenSearch={() => setSearchOpen(true)}
+        />
+      </div>
+
+      {/* Global Search Overlay */}
+      <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} />
+
       {/* Responsive Mobile Drawer */}
       {mobileMenuOpen && (
         <div
@@ -169,20 +243,59 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
           }`}
         >
           <div className="flex flex-col space-y-2 pt-2">
-            {navigationLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                  isDark
-                    ? 'text-slate-200 hover:bg-slate-800'
-                    : 'text-slate-700 hover:bg-purple-50 hover:text-purple-700'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navigationLinks.map((link) => {
+              if (link.label === 'Programs') {
+                return (
+                  <div key={link.label}>
+                    <button
+                      type="button"
+                      onClick={() => setMobileProgramsOpen((v) => !v)}
+                      className={`w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                        isDark ? 'text-slate-200 hover:bg-slate-800' : 'text-slate-700 hover:bg-purple-50 hover:text-purple-700'
+                      }`}
+                    >
+                      {link.label}
+                      <ChevronDown className={`w-4 h-4 transition-transform ${mobileProgramsOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    {mobileProgramsOpen && (
+                      <div className="pl-3 pt-1 pb-2 space-y-1">
+                        <Link
+                          href="/programs/data-science"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="block px-3 py-2 rounded-md text-sm font-semibold text-purple-700 bg-purple-50"
+                        >
+                          Data Science Championship Program™
+                        </Link>
+                        <Link
+                          href="/programs"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="block px-3 py-2 rounded-md text-xs font-semibold text-slate-500"
+                        >
+                          Explore all →
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
+              if (link.children) return null;
+
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                    isDark
+                      ? 'text-slate-200 hover:bg-slate-800'
+                      : 'text-slate-700 hover:bg-purple-50 hover:text-purple-700'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2.5">

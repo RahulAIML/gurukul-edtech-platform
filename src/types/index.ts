@@ -59,12 +59,23 @@ export interface ProjectItem {
   id: string;
   title: string;
   description: string;
+  publicSummary: string;
+  confidential?: boolean;
   iconName: 'shopping-cart' | 'users' | 'bar-chart' | 'truck';
   iconBgColor: string;
   iconColor: string;
   category: string;
   difficulty?: string;
   technologies?: string[];
+}
+
+export interface SearchableItem {
+  id: string;
+  title: string;
+  description: string;
+  href: string;
+  group: 'Programs' | 'Learning Journey' | 'Resources';
+  keywords: string[];
 }
 
 export interface TestimonialItem {
@@ -107,6 +118,8 @@ export interface CurriculumModule {
   project?: {
     name: string;
     description: string;
+    publicSummary: string;
+    confidential?: boolean;
   };
 }
 
@@ -152,6 +165,8 @@ export interface ProgramDetailData {
     title: string;
     type: 'Mini Project' | 'Checkpoint Project' | 'Capstone Project';
     description: string;
+    publicSummary: string;
+    confidential?: boolean;
     techStack: string[];
     outcomes: string[];
   }[];

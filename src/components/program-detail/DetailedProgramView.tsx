@@ -40,75 +40,75 @@ export const DetailedProgramView: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col selection:bg-purple-600 selection:text-white">
+    <div className="min-h-screen bg-white flex flex-col selection:bg-purple-600 selection:text-white">
       {/* Light Navbar */}
       <Navbar variant="light" />
 
       {/* 1. Hero Section */}
-      <section className="relative bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-900 text-white py-16 lg:py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-b from-purple-50 via-white to-white text-slate-900 py-16 lg:py-24 overflow-hidden border-b border-slate-100">
         {/* Background Ambient Glow */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-200/30 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-200/30 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Col: Program Headline & Badges (8 cols) */}
             <div className="lg:col-span-8 space-y-6">
               {/* Laurel / Top Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/15 border border-sky-400/30 text-sky-300 text-xs font-bold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 border border-sky-200 text-sky-700 text-xs font-bold uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5 text-sky-600" />
                 <span>FLAGSHIP CHAMPIONSHIP PROGRAM • 2026 COHORT</span>
               </div>
 
               {/* Title */}
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black font-heading tracking-tight text-white leading-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black font-heading tracking-tight text-slate-950 leading-tight">
                 DATA SCIENCE <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-purple-300 to-amber-300">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 via-indigo-600 to-amber-500">
                   CHAMPIONSHIP PROGRAM
                 </span>
               </h1>
 
               {/* Subtitle */}
-              <p className="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+              <p className="text-slate-600 text-base sm:text-lg max-w-2xl leading-relaxed">
                 {dataScienceProgram.subtitle} Master Statistics, Python, SQL, Exploratory Data Analysis, Machine Learning, MLOps, and Generative AI through our dual-track curriculum.
               </p>
 
               {/* Key Stat Pills Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-                <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                  <div className="flex items-center gap-2 text-sky-400 mb-1">
+                <div className="p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
+                  <div className="flex items-center gap-2 text-purple-700 mb-1">
                     <Calendar className="w-4 h-4" />
                     <span className="text-[11px] font-bold uppercase">Duration</span>
                   </div>
-                  <div className="text-base font-black text-white font-heading">24 Weeks</div>
-                  <div className="text-[10px] text-slate-400">Structured Roadmap</div>
+                  <div className="text-base font-black text-slate-950 font-heading">24 Weeks</div>
+                  <div className="text-[10px] text-slate-500">Structured Roadmap</div>
                 </div>
 
-                <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                  <div className="flex items-center gap-2 text-purple-400 mb-1">
+                <div className="p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
+                  <div className="flex items-center gap-2 text-indigo-700 mb-1">
                     <Clock className="w-4 h-4" />
                     <span className="text-[11px] font-bold uppercase">Commitment</span>
                   </div>
-                  <div className="text-base font-black text-white font-heading">10 Hrs / Week</div>
-                  <div className="text-[10px] text-slate-400">192 Total Hours</div>
+                  <div className="text-base font-black text-slate-950 font-heading">10 Hrs / Week</div>
+                  <div className="text-[10px] text-slate-500">192 Total Hours</div>
                 </div>
 
-                <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                  <div className="flex items-center gap-2 text-amber-400 mb-1">
+                <div className="p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
+                  <div className="flex items-center gap-2 text-amber-600 mb-1">
                     <Award className="w-4 h-4" />
                     <span className="text-[11px] font-bold uppercase">Projects</span>
                   </div>
-                  <div className="text-base font-black text-white font-heading">6+ Portfolio</div>
-                  <div className="text-[10px] text-slate-400">Production Ready</div>
+                  <div className="text-base font-black text-slate-950 font-heading">6+ Portfolio</div>
+                  <div className="text-[10px] text-slate-500">Production Ready</div>
                 </div>
 
-                <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                  <div className="flex items-center gap-2 text-emerald-400 mb-1">
+                <div className="p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
+                  <div className="flex items-center gap-2 text-emerald-700 mb-1">
                     <ShieldCheck className="w-4 h-4" />
                     <span className="text-[11px] font-bold uppercase">Mentorship</span>
                   </div>
-                  <div className="text-base font-black text-white font-heading">1-on-1 Live</div>
-                  <div className="text-[10px] text-slate-400">Weekly Code Reviews</div>
+                  <div className="text-base font-black text-slate-950 font-heading">1-on-1 Live</div>
+                  <div className="text-[10px] text-slate-500">Weekly Code Reviews</div>
                 </div>
               </div>
 
@@ -125,7 +125,7 @@ export const DetailedProgramView: React.FC = () => {
 
                 <Link
                   href="/programs/data-science/overview"
-                  className="px-6 py-4 rounded-full text-sm font-bold text-slate-200 bg-slate-800/80 hover:bg-slate-800 border border-slate-700 hover:text-white transition-all"
+                  className="px-6 py-4 rounded-full text-sm font-bold text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 hover:text-slate-950 transition-all"
                 >
                   View Brief Overview
                 </Link>
@@ -133,36 +133,36 @@ export const DetailedProgramView: React.FC = () => {
             </div>
 
             {/* Right Col: Pricing / Cohort Fast-Card (4 cols) */}
-            <div className="lg:col-span-4 bg-slate-900/90 rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-2xl space-y-6">
-              <div className="flex items-center justify-between pb-4 border-b border-slate-800">
+            <div className="lg:col-span-4 bg-white rounded-3xl p-6 sm:p-8 border border-purple-200 shadow-card-hover space-y-6">
+              <div className="flex items-center justify-between pb-4 border-b border-slate-100">
                 <div>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Next Cohort Starts</span>
-                  <div className="text-base font-bold text-white">Upcoming Monday</div>
+                  <div className="text-base font-bold text-slate-950">Upcoming Monday</div>
                 </div>
-                <div className="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold">
+                <div className="px-2.5 py-1 rounded-md bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold">
                   Seats Filling Fast
                 </div>
               </div>
 
               <div>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-black text-white font-heading">
+                  <span className="text-3xl font-black text-slate-950 font-heading">
                     {dataScienceProgram.pricing.discountedPrice}
                   </span>
-                  <span className="text-sm text-slate-500 line-through">
+                  <span className="text-sm text-slate-400 line-through">
                     {dataScienceProgram.pricing.originalPrice}
                   </span>
-                  <span className="text-xs font-bold text-amber-400">40% OFF</span>
+                  <span className="text-xs font-bold text-amber-600">40% OFF</span>
                 </div>
-                <div className="text-xs text-slate-400 mt-1">
+                <div className="text-xs text-slate-500 mt-1">
                   {dataScienceProgram.pricing.emiStartsAt}
                 </div>
               </div>
 
-              <div className="space-y-2.5 text-xs text-slate-300">
+              <div className="space-y-2.5 text-xs text-slate-600">
                 {dataScienceProgram.pricing.features.slice(0, 5).map((feat, i) => (
                   <div key={i} className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                    <Check className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
                     <span>{feat}</span>
                   </div>
                 ))}
@@ -438,8 +438,8 @@ export const DetailedProgramView: React.FC = () => {
 
                       {module.project && (
                         <div className="p-3 rounded-xl bg-purple-100/60 border border-purple-200 text-xs">
-                          <div className="font-bold text-purple-900">Module Project: {module.project.name}</div>
-                          <p className="text-purple-800 text-[11px] mt-0.5">{module.project.description}</p>
+                          <div className="font-bold text-purple-900">Module Project</div>
+                          <p className="text-purple-800 text-[11px] mt-0.5">{module.project.publicSummary}</p>
                         </div>
                       )}
                     </div>
@@ -502,10 +502,10 @@ export const DetailedProgramView: React.FC = () => {
                     {proj.type}
                   </span>
                   <h3 className="text-base font-bold text-slate-950 font-heading mt-3 mb-2 leading-snug">
-                    {proj.title}
+                    Project-Oriented Learning
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed mb-4">
-                    {proj.description}
+                    {proj.publicSummary}
                   </p>
                 </div>
 
@@ -605,15 +605,15 @@ export const DetailedProgramView: React.FC = () => {
       </section>
 
       {/* 9. Final Enrollment CTA Bar */}
-      <section className="py-16 bg-gradient-to-r from-purple-900 via-indigo-950 to-slate-950 text-white">
+      <section className="py-16 bg-gradient-to-b from-white to-purple-50/60 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <span className="text-xs font-black text-amber-400 uppercase tracking-widest">
+          <span className="text-xs font-black text-amber-600 uppercase tracking-widest">
             BECOME A CERTIFIED CHAMPION
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-heading max-w-2xl mx-auto leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-heading max-w-2xl mx-auto leading-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-800 via-indigo-700 to-slate-900">
             Your Hard Work Will Pay Off. Start Today.
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto">
+          <p className="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
             Join the next cohort of the Data Science Championship Program. Limited seats available per mentor batch.
           </p>
 
@@ -628,9 +628,9 @@ export const DetailedProgramView: React.FC = () => {
             </button>
             <a
               href="tel:+919876543210"
-              className="px-6 py-4 rounded-full text-sm font-bold text-slate-200 hover:text-white border border-slate-700 hover:border-slate-500 transition-all flex items-center gap-2"
+              className="px-6 py-4 rounded-full text-sm font-bold text-slate-700 hover:text-slate-950 border border-slate-300 hover:border-slate-400 transition-all flex items-center gap-2"
             >
-              <PhoneCall className="w-4 h-4 text-amber-400" />
+              <PhoneCall className="w-4 h-4 text-amber-600" />
               <span>Talk to Admissions Advisor</span>
             </a>
           </div>

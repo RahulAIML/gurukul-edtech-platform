@@ -11,18 +11,18 @@ import { BriefFooterCta } from './BriefFooterCta';
 
 export const BriefDescriptionLayout: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gurukul-navy-950 text-slate-100 selection:bg-sky-500 selection:text-white flex flex-col justify-between">
-      {/* 1. Global Dark Navbar */}
-      <Navbar variant="dark" />
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-purple-500 selection:text-white flex flex-col justify-between">
+      {/* 1. Global Light Navbar */}
+      <Navbar variant="light" />
 
       {/* 2. Top Golden Laurels Motto Banner */}
-      <div className="w-full bg-slate-950 border-b border-slate-800/80 py-3 px-4 text-center shadow-md">
+      <div className="w-full bg-slate-50 border-b border-slate-100 py-3 px-4 text-center shadow-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-center gap-3">
-          <span className="text-amber-400 text-sm">🌿</span>
-          <p className="text-xs sm:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 tracking-wider font-heading uppercase">
+          <span className="text-amber-500 text-sm">🌿</span>
+          <p className="text-xs sm:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-orange-500 to-amber-600 tracking-wider font-heading uppercase">
             One Goal. Many Paths. Your Championship Starts Here.
           </p>
-          <span className="text-amber-400 text-sm">🌿</span>
+          <span className="text-amber-500 text-sm">🌿</span>
         </div>
       </div>
 

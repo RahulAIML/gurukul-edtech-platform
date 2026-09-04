@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Outfit } from 'next/font/google';
+import { PageTransition } from '@/components/layout/PageTransition';
 import './globals.css';
 
 const inter = Inter({
@@ -35,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
       <body className="min-h-screen bg-white text-slate-900 selection:bg-purple-500 selection:text-white">
-        {children}
+        <PageTransition>{children}</PageTransition>
       </body>
     </html>
   );
