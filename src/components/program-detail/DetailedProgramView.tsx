@@ -397,9 +397,6 @@ export const DetailedProgramView: React.FC = () => {
                     </div>
 
                     <div className="flex items-center gap-4 text-slate-500">
-                      <span className="hidden sm:inline text-xs font-semibold text-slate-400">
-                        {module.learningHours} Hours • {module.lessonsCount} Lessons
-                      </span>
                       {isOpen ? <ChevronUp className="w-5 h-5 text-purple-700" /> : <ChevronDown className="w-5 h-5" />}
                     </div>
                   </button>

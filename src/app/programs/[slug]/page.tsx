@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props) {
     .join(' ');
 
   return {
-    title: `${titleCase} Championship Program (Coming Soon) | Gurukul`,
+    title: `${titleCase} Championship Program | Gurukul`,
     description: `The ${titleCase} Championship Program is under active curriculum development.`,
   };
 }

@@ -35,10 +35,10 @@ export const Footer: React.FC = () => {
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 </Link>
               </li>
-              <li><span className="text-slate-400 cursor-not-allowed">Network Championship (Soon)</span></li>
-              <li><span className="text-slate-400 cursor-not-allowed">Oracle Championship (Soon)</span></li>
-              <li><span className="text-slate-400 cursor-not-allowed">SQL Server Database (Soon)</span></li>
-              <li><span className="text-slate-400 cursor-not-allowed">AI & GenAI Championship (Soon)</span></li>
+              <li><span className="text-slate-400 cursor-default">Network Championship</span></li>
+              <li><span className="text-slate-400 cursor-default">Oracle Championship</span></li>
+              <li><span className="text-slate-400 cursor-default">SQL Server Database</span></li>
+              <li><span className="text-slate-400 cursor-default">AI & GenAI Championship</span></li>
             </ul>
           </div>
 

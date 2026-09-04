@@ -29,7 +29,7 @@ export default function DynamicOverviewPage({ params }: Props) {
         </div>
 
         <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold uppercase tracking-wider">
-          Overview Coming Soon
+          Curriculum In Development
         </span>
 
         <h1 className="text-3xl sm:text-4xl font-black font-heading text-slate-900">
