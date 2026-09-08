@@ -25,7 +25,7 @@ export const heroStatsData: StatItem[] = [
     label: 'Students Trained',
     sublabel: 'and Growing',
     iconName: 'users',
-    color: '#9333EA', // purple
+    color: '#DC2626', // red
   },
   {
     id: 'salary-boost',
@@ -49,7 +49,7 @@ export const heroStatsData: StatItem[] = [
     label: 'Career Support',
     sublabel: 'Forever',
     iconName: 'infinity',
-    color: '#7E22CE', // deep purple
+    color: '#B91C1C', // deep red
   },
   {
     id: 'student-rating',
@@ -57,7 +57,7 @@ export const heroStatsData: StatItem[] = [
     label: 'Average Student',
     sublabel: 'Rating',
     iconName: 'star',
-    color: '#9333EA', // purple
+    color: '#DC2626', // red
   },
 ];
 
@@ -184,10 +184,10 @@ export const championshipProgramsList: ProgramCard[] = [
 ];
 
 export const mentorSectionData: MentorData = {
-  name: 'Rahul Verma',
-  role: 'Senior Data Scientist',
-  company: 'Amazon',
-  avatarUrl: '/assets/mentors/rahul.jpg',
+  name: 'Jai Singh',
+  role: 'Microsoft • 14+ Yrs Experience',
+  company: 'Microsoft',
+  avatarUrl: '/assets/mentors/jai.jpg',
   quote: "Keep going, Deepak! You're improving consistently.",
   stats: {
     overallProgress: 78,

@@ -16,8 +16,8 @@ export const HeroSection: React.FC = () => {
           {/* Left Column: Headline & Value Proposition (5.5 cols) */}
           <div className="lg:col-span-5 flex flex-col items-start text-left z-10">
             {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-200 text-purple-800 text-[11px] font-bold tracking-wider uppercase mb-5 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-purple-600 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-red-800 text-[11px] font-bold tracking-wider uppercase mb-5 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
               INDUSTRY-ALIGNED. MENTOR-DRIVEN. RESULT-FOCUSED.
             </div>
 
@@ -46,7 +46,7 @@ export const HeroSection: React.FC = () => {
             <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
               <Link
                 href="/programs"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-bold text-white rounded-full bg-gradient-to-r from-purple-700 via-purple-800 to-indigo-800 hover:from-purple-800 hover:to-indigo-900 shadow-lg shadow-purple-600/30 hover:shadow-purple-600/45 transition-all duration-200 transform hover:-translate-y-0.5 w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-bold text-white rounded-full bg-gradient-to-r from-red-700 via-red-800 to-red-900 hover:from-red-800 hover:to-red-900 shadow-lg shadow-red-600/30 hover:shadow-red-600/45 transition-all duration-200 transform hover:-translate-y-0.5 w-full sm:w-auto"
               >
                 <span>Explore Programs</span>
                 <ArrowRight className="w-4 h-4" />
@@ -55,13 +55,13 @@ export const HeroSection: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setVideoModalOpen(true)}
-                className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full text-slate-800 hover:text-purple-700 hover:bg-purple-50/70 transition-all duration-200 group"
+                className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full text-slate-800 hover:text-red-700 hover:bg-red-50/70 transition-all duration-200 group"
               >
-                <div className="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center shadow-md group-hover:scale-105 group-hover:bg-purple-700 transition-all duration-200">
+                <div className="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center shadow-md group-hover:scale-105 group-hover:bg-red-700 transition-all duration-200">
                   <Play className="w-4 h-4 fill-current ml-0.5 text-white" />
                 </div>
                 <div className="text-left">
-                  <div className="text-xs font-bold text-slate-900 group-hover:text-purple-700">Watch Video</div>
+                  <div className="text-xs font-bold text-slate-900 group-hover:text-red-700">Watch Video</div>
                   <div className="text-[11px] text-slate-500">See how it works</div>
                 </div>
               </button>
@@ -71,7 +71,7 @@ export const HeroSection: React.FC = () => {
           {/* Right Column: Hero Visual Artwork Composition (6.5 cols) */}
           <div className="lg:col-span-7 relative flex flex-col items-center">
             {/* Soft Ambient Background Glows */}
-            <div className="absolute -top-10 -right-10 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl -z-10 pointer-events-none" />
+            <div className="absolute -top-10 -right-10 w-96 h-96 bg-red-200/30 rounded-full blur-3xl -z-10 pointer-events-none" />
             <div className="absolute -bottom-10 -left-10 w-80 h-80 bg-amber-100/30 rounded-full blur-3xl -z-10 pointer-events-none" />
 
             <div className="relative w-full">
@@ -80,11 +80,11 @@ export const HeroSection: React.FC = () => {
                 <div className="text-[11px] sm:text-xs font-bold tracking-tight text-slate-800 italic leading-tight">
                   <p>Discipline Today</p>
                   <p className="text-slate-900 font-semibold">Freedom Tomorrow.</p>
-                  <p className="text-purple-700 font-bold">Your Hard Work</p>
+                  <p className="text-red-700 font-bold">Your Hard Work</p>
                   <p className="text-amber-600 font-extrabold">Will Pay Off.</p>
                 </div>
                 <div className="flex justify-end mt-1">
-                  <svg width="36" height="36" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-purple-600 animate-pulse">
+                  <svg width="36" height="36" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-red-600 animate-pulse">
                     <path d="M6 40L38 8M38 8H18M38 8V28" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>

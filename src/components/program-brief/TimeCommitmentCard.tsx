@@ -23,8 +23,8 @@ export const TimeCommitmentCard: React.FC = () => {
         </div>
 
         {/* Total Hours Banner */}
-        <div className="p-2.5 rounded-xl bg-indigo-50 border border-indigo-100 text-center mb-4 shadow-sm">
-          <div className="text-[11px] font-bold text-indigo-700 font-heading">
+        <div className="p-2.5 rounded-xl bg-red-50 border border-red-100 text-center mb-4 shadow-sm">
+          <div className="text-[11px] font-bold text-red-800 font-heading">
             192 TOTAL LEARNING HOURS
           </div>
           <div className="text-[9px] text-slate-500">(24 WEEKS × 10 HOURS)</div>
@@ -39,7 +39,7 @@ export const TimeCommitmentCard: React.FC = () => {
           <div className="space-y-1.5 text-[11px]">
             <div className="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-100">
               <div className="flex items-center gap-2 text-slate-700">
-                <Video className="w-3.5 h-3.5 text-purple-600" />
+                <Video className="w-3.5 h-3.5 text-red-600" />
                 <span>Video Lessons / Theory</span>
               </div>
               <span className="font-bold text-slate-900 font-mono">3 Hours</span>
@@ -79,7 +79,7 @@ export const TimeCommitmentCard: React.FC = () => {
       </div>
 
       {/* Motivational Runner Footer Banner */}
-      <div className="mt-4 p-2.5 rounded-xl bg-gradient-to-r from-sky-50 to-indigo-50 border border-sky-100 text-[10px] text-slate-600 flex items-center justify-between shadow-sm">
+      <div className="mt-4 p-2.5 rounded-xl bg-gradient-to-r from-sky-50 to-red-50 border border-sky-100 text-[10px] text-slate-600 flex items-center justify-between shadow-sm">
         <span className="leading-tight">
           Every Test. Every Project. Every Step Brings You Closer to Your Dream Career.
         </span>

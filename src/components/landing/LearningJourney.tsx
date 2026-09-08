@@ -7,21 +7,21 @@ export const LearningJourney: React.FC = () => {
     const props = { className: 'w-6 h-6' };
     switch (iconName) {
       case 'book-open':
-        return <BookOpen {...props} className="w-6 h-6 text-purple-600" />;
+        return <BookOpen {...props} className="w-6 h-6 text-red-600" />;
       case 'code':
         return <Code {...props} className="w-6 h-6 text-blue-600" />;
       case 'box':
-        return <Box {...props} className="w-6 h-6 text-purple-600" />;
+        return <Box {...props} className="w-6 h-6 text-red-600" />;
       case 'user-check':
-        return <UserCheck {...props} className="w-6 h-6 text-indigo-600" />;
+        return <UserCheck {...props} className="w-6 h-6 text-red-700" />;
       case 'trending-up':
         return <TrendingUp {...props} className="w-6 h-6 text-sky-600" />;
       case 'message-square':
-        return <MessageSquare {...props} className="w-6 h-6 text-purple-600" />;
+        return <MessageSquare {...props} className="w-6 h-6 text-red-600" />;
       case 'award':
         return <Award {...props} className="w-6 h-6 text-amber-500" />;
       default:
-        return <BookOpen {...props} className="w-6 h-6 text-purple-600" />;
+        return <BookOpen {...props} className="w-6 h-6 text-red-600" />;
     }
   };
 
@@ -32,7 +32,7 @@ export const LearningJourney: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-slate-950 font-heading">
             A JOURNEY THAT TURNS YOU INTO A{' '}
-            <span className="text-purple-700">JOB-READY</span> PROFESSIONAL
+            <span className="text-red-700">JOB-READY</span> PROFESSIONAL
           </h2>
         </div>
 
@@ -41,7 +41,7 @@ export const LearningJourney: React.FC = () => {
           {learningJourneySteps.map((step, index) => (
             <div key={step.id} className="flex flex-col items-center text-center relative group">
               {/* Step Circle Card */}
-              <div className="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center mb-4 group-hover:bg-purple-50 group-hover:border-purple-300 group-hover:scale-110 transition-all duration-200 shadow-sm">
+              <div className="w-14 h-14 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center mb-4 group-hover:bg-red-50 group-hover:border-red-300 group-hover:scale-110 transition-all duration-200 shadow-sm">
                 {getStepIcon(step.iconName)}
               </div>
 
@@ -72,18 +72,18 @@ export const LearningJourney: React.FC = () => {
             <div key={step.id} className="relative flex items-start gap-4">
               {/* Connecting Line */}
               {index < learningJourneySteps.length - 1 && (
-                <div className="absolute left-6 top-12 bottom-0 w-0.5 bg-purple-100 -ml-[1px]" />
+                <div className="absolute left-6 top-12 bottom-0 w-0.5 bg-red-100 -ml-[1px]" />
               )}
 
               {/* Step Circle */}
-              <div className="w-12 h-12 rounded-full bg-purple-50 border border-purple-200 flex items-center justify-center flex-shrink-0 z-10 shadow-sm">
+              <div className="w-12 h-12 rounded-full bg-red-50 border border-red-200 flex items-center justify-center flex-shrink-0 z-10 shadow-sm">
                 {getStepIcon(step.iconName)}
               </div>
 
               {/* Step Content */}
               <div className="pt-1.5">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-bold px-2 py-0.5 rounded bg-purple-100 text-purple-700">
+                  <span className="text-xs font-bold px-2 py-0.5 rounded bg-red-100 text-red-700">
                     Step {index + 1}
                   </span>
                   <h3 className="text-base font-bold text-slate-900 font-heading">{step.title}</h3>

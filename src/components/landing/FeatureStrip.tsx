@@ -4,7 +4,7 @@ import { ClipboardList, Users, Briefcase, MessageSquareCode, ShieldCheck } from 
 
 export const FeatureStrip: React.FC = () => {
   const getFeatureIcon = (iconName: string) => {
-    const props = { className: 'w-5 h-5 text-purple-700' };
+    const props = { className: 'w-5 h-5 text-red-700' };
     switch (iconName) {
       case 'clipboard-list':
         return <ClipboardList {...props} />;
@@ -27,7 +27,7 @@ export const FeatureStrip: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 items-center justify-center">
           {featureStripItems.map((item) => (
             <div key={item.id} className="flex items-center gap-3 justify-center sm:justify-start">
-              <div className="w-10 h-10 rounded-xl bg-purple-100/70 flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-red-100/70 flex items-center justify-center flex-shrink-0">
                 {getFeatureIcon(item.iconName)}
               </div>
               <span className="text-xs sm:text-sm font-bold text-slate-800 leading-tight">

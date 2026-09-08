@@ -6,9 +6,9 @@ export const CareerCtaBanner: React.FC = () => {
   return (
     <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-3xl bg-gradient-to-r from-purple-900 via-indigo-900 to-purple-950 p-8 sm:p-12 overflow-hidden shadow-2xl border border-purple-800">
+        <div className="relative rounded-3xl bg-gradient-to-r from-red-900 via-red-900 to-red-950 p-8 sm:p-12 overflow-hidden shadow-2xl border border-red-800">
           {/* Decorative Glow */}
-          <div className="absolute -top-24 -right-24 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -top-24 -right-24 w-80 h-80 bg-red-500/20 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
@@ -25,7 +25,7 @@ export const CareerCtaBanner: React.FC = () => {
                   <br />
                   <span className="text-amber-400">IT NEEDS A TRAINING GROUND.</span>
                 </h2>
-                <p className="text-sm sm:text-base text-purple-200 mt-2 font-medium">
+                <p className="text-sm sm:text-base text-red-200 mt-2 font-medium">
                   Enter Gurukul. Become a Data Science Champion.
                 </p>
               </div>
@@ -42,7 +42,7 @@ export const CareerCtaBanner: React.FC = () => {
               </Link>
 
               <a
-                href="tel:+919876543210"
+                href="#"
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full text-xs font-bold text-white hover:text-amber-300 transition-colors"
               >
                 <PhoneCall className="w-4 h-4 text-amber-400" />

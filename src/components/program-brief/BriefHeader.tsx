@@ -4,7 +4,7 @@ import { Calendar, Clock, Award, ShieldCheck, CheckCircle, Flame } from 'lucide-
 
 export const BriefHeader: React.FC = () => {
   return (
-    <div className="relative rounded-2xl bg-gradient-to-r from-purple-50 via-white to-sky-50 border border-slate-200 p-6 sm:p-8 shadow-card overflow-hidden mb-6">
+    <div className="relative rounded-2xl bg-gradient-to-r from-red-50 via-white to-sky-50 border border-slate-200 p-6 sm:p-8 shadow-card overflow-hidden mb-6">
       {/* Background High-Fidelity Data City Skyline Image */}
       <div className="absolute inset-y-0 right-0 w-full sm:w-2/3 opacity-10 pointer-events-none">
         <Image
@@ -19,7 +19,7 @@ export const BriefHeader: React.FC = () => {
 
       <div className="relative z-10 space-y-5">
         <div>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight font-heading text-transparent bg-clip-text bg-gradient-to-r from-purple-700 via-indigo-700 to-sky-600">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight font-heading text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-red-800 to-sky-600">
             DATA SCIENCE CHAMPIONSHIP PROGRAM
           </h1>
           <p className="text-slate-600 text-sm sm:text-base font-medium mt-1">
@@ -31,7 +31,7 @@ export const BriefHeader: React.FC = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 pt-1">
           {/* 1. 24 Weeks */}
           <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 shadow-sm">
-            <Calendar className="w-4 h-4 text-purple-600 flex-shrink-0" />
+            <Calendar className="w-4 h-4 text-red-600 flex-shrink-0" />
             <div>
               <div className="text-xs font-black text-slate-900 font-heading">24</div>
               <div className="text-[10px] text-slate-500 leading-tight">Weeks</div>
@@ -40,7 +40,7 @@ export const BriefHeader: React.FC = () => {
 
           {/* 2. 192 Hours */}
           <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 shadow-sm">
-            <Clock className="w-4 h-4 text-indigo-600 flex-shrink-0" />
+            <Clock className="w-4 h-4 text-red-700 flex-shrink-0" />
             <div>
               <div className="text-xs font-black text-slate-900 font-heading">192</div>
               <div className="text-[10px] text-slate-500 leading-tight">Total Learning Hours</div>

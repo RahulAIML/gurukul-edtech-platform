@@ -10,7 +10,7 @@ const StoryCard: React.FC<{ item: (typeof successStoriesData)[number] }> = ({ it
   <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-card hover:shadow-card-hover transition-all duration-200 flex flex-col justify-between h-full">
     <div>
       <div className="flex items-center gap-3 mb-3">
-        <div className="w-11 h-11 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-600 p-0.5 shadow-sm flex-shrink-0">
+        <div className="w-11 h-11 rounded-full bg-gradient-to-tr from-red-600 to-red-700 p-0.5 shadow-sm flex-shrink-0">
           <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center text-white font-bold text-xs">
             {item.name.split(' ').map((n) => n[0]).join('')}
           </div>
@@ -18,7 +18,7 @@ const StoryCard: React.FC<{ item: (typeof successStoriesData)[number] }> = ({ it
         <div>
           <h3 className="text-sm font-bold text-slate-900 leading-tight font-heading">{item.name}</h3>
           <p className="text-[11px] text-slate-500">{item.role}</p>
-          <p className="text-[10px] text-purple-700 font-semibold">Placed at {item.company}</p>
+          <p className="text-[10px] text-red-700 font-semibold">Placed at {item.company}</p>
         </div>
       </div>
 
@@ -46,21 +46,21 @@ export const SuccessStories: React.FC = () => {
         {/* Section Heading & Navigation Arrows */}
         <div className="flex items-center justify-between mb-10">
           <div>
-            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-purple-900 font-heading uppercase">
+            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-red-900 font-heading uppercase">
               SUCCESS STORIES THAT INSPIRE
             </h2>
           </div>
           <div className="hidden sm:flex items-center gap-2">
             <button
               type="button"
-              className="p-2 rounded-full border border-slate-200 bg-white text-slate-600 hover:text-purple-700 hover:border-purple-300 transition-colors"
+              className="p-2 rounded-full border border-slate-200 bg-white text-slate-600 hover:text-red-700 hover:border-red-300 transition-colors"
               aria-label="Previous story"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               type="button"
-              className="p-2 rounded-full border border-slate-200 bg-white text-slate-600 hover:text-purple-700 hover:border-purple-300 transition-colors"
+              className="p-2 rounded-full border border-slate-200 bg-white text-slate-600 hover:text-red-700 hover:border-red-300 transition-colors"
               aria-label="Next story"
             >
               <ChevronRight className="w-4 h-4" />
@@ -71,15 +71,15 @@ export const SuccessStories: React.FC = () => {
         {/* CTA Card, reused on both layouts */}
         {(() => {
           const ctaCard = (
-            <div className="bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-950 rounded-2xl p-6 text-white shadow-xl flex flex-col justify-between relative overflow-hidden group h-full">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl pointer-events-none" />
+            <div className="bg-gradient-to-br from-red-900 via-red-800 to-red-950 rounded-2xl p-6 text-white shadow-xl flex flex-col justify-between relative overflow-hidden group h-full">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/20 rounded-full blur-2xl pointer-events-none" />
               <div>
                 <h3 className="text-base font-black tracking-tight font-heading leading-snug mb-2">
                   YOUR STORY
                   <br />
                   CAN BE NEXT.
                 </h3>
-                <p className="text-xs text-purple-200/90 leading-relaxed mb-6">
+                <p className="text-xs text-red-200/90 leading-relaxed mb-6">
                   Join thousands of learners who are now building the careers they dreamed of.
                 </p>
               </div>

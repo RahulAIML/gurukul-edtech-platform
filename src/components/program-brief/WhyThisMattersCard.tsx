@@ -38,7 +38,7 @@ export const WhyThisMattersCard: React.FC = () => {
 
           {/* 3. 36% Growth */}
           <div className="flex items-start gap-3">
-            <div className="w-8 h-8 rounded-lg bg-purple-50 border border-purple-100 flex items-center justify-center text-purple-600 flex-shrink-0 mt-0.5">
+            <div className="w-8 h-8 rounded-lg bg-red-50 border border-red-100 flex items-center justify-center text-red-600 flex-shrink-0 mt-0.5">
               <TrendingUp className="w-4 h-4" />
             </div>
             <div>
@@ -80,7 +80,7 @@ export const WhyThisMattersCard: React.FC = () => {
       {/* Button */}
       <button
         type="button"
-        className="mt-6 w-full py-2.5 px-3 rounded-xl bg-slate-50 hover:bg-purple-50 text-purple-700 hover:text-purple-800 border border-slate-200 hover:border-purple-200 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors shadow-sm"
+        className="mt-6 w-full py-2.5 px-3 rounded-xl bg-slate-50 hover:bg-red-50 text-red-700 hover:text-red-800 border border-slate-200 hover:border-red-200 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors shadow-sm"
       >
         <span>Explore Full Market Report</span>
         <ArrowRight className="w-3.5 h-3.5" />

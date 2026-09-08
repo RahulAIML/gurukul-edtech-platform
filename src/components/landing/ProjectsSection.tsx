@@ -1,7 +1,6 @@
 import React from 'react';
-import Link from 'next/link';
 import { featuredProjectsData } from '@/data/landingData';
-import { ShoppingCart, Users, BarChart3, Truck, ArrowRight } from 'lucide-react';
+import { ShoppingCart, Users, BarChart3, Truck } from 'lucide-react';
 import { Carousel } from '@/components/ui/Carousel';
 
 const renderProjectIcon = (iconName: string, iconColor: string) => {
@@ -76,16 +75,6 @@ export const ProjectsSection: React.FC = () => {
           </Carousel>
         </div>
 
-        {/* Bottom CTA Button */}
-        <div className="text-center">
-          <Link
-            href="/programs/data-science/overview"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold text-slate-800 border border-slate-300 hover:border-purple-600 hover:text-purple-700 hover:bg-purple-50/50 transition-all duration-200"
-          >
-            <span>View All Projects</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
       </div>
     </section>
   );

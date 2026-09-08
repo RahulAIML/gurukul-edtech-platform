@@ -40,15 +40,15 @@ export const DetailedProgramView: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col selection:bg-purple-600 selection:text-white">
+    <div className="min-h-screen bg-white flex flex-col selection:bg-red-600 selection:text-white">
       {/* Light Navbar */}
       <Navbar variant="light" />
 
       {/* 1. Hero Section */}
-      <section className="relative bg-gradient-to-b from-purple-50 via-white to-white text-slate-900 py-16 lg:py-24 overflow-hidden border-b border-slate-100">
+      <section className="relative bg-gradient-to-b from-red-50 via-white to-white text-slate-900 py-16 lg:py-24 overflow-hidden border-b border-slate-100">
         {/* Background Ambient Glow */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-200/30 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-200/30 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-red-200/30 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -63,7 +63,7 @@ export const DetailedProgramView: React.FC = () => {
               {/* Title */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black font-heading tracking-tight text-slate-950 leading-tight">
                 DATA SCIENCE <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 via-indigo-600 to-amber-500">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 via-red-700 to-amber-500">
                   CHAMPIONSHIP PROGRAM
                 </span>
               </h1>
@@ -76,7 +76,7 @@ export const DetailedProgramView: React.FC = () => {
               {/* Key Stat Pills Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
                 <div className="p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
-                  <div className="flex items-center gap-2 text-purple-700 mb-1">
+                  <div className="flex items-center gap-2 text-red-700 mb-1">
                     <Calendar className="w-4 h-4" />
                     <span className="text-[11px] font-bold uppercase">Duration</span>
                   </div>
@@ -85,7 +85,7 @@ export const DetailedProgramView: React.FC = () => {
                 </div>
 
                 <div className="p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
-                  <div className="flex items-center gap-2 text-indigo-700 mb-1">
+                  <div className="flex items-center gap-2 text-red-800 mb-1">
                     <Clock className="w-4 h-4" />
                     <span className="text-[11px] font-bold uppercase">Commitment</span>
                   </div>
@@ -133,7 +133,7 @@ export const DetailedProgramView: React.FC = () => {
             </div>
 
             {/* Right Col: Pricing / Cohort Fast-Card (4 cols) */}
-            <div className="lg:col-span-4 bg-white rounded-3xl p-6 sm:p-8 border border-purple-200 shadow-card-hover space-y-6">
+            <div className="lg:col-span-4 bg-white rounded-3xl p-6 sm:p-8 border border-red-200 shadow-card-hover space-y-6">
               <div className="flex items-center justify-between pb-4 border-b border-slate-100">
                 <div>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Next Cohort Starts</span>
@@ -188,7 +188,7 @@ export const DetailedProgramView: React.FC = () => {
             {/* Left Column: Deep Overview & Highlights (7 cols) */}
             <div className="lg:col-span-7 space-y-6">
               <div>
-                <span className="text-xs font-extrabold text-purple-700 tracking-wider uppercase">
+                <span className="text-xs font-extrabold text-red-700 tracking-wider uppercase">
                   PROGRAM OVERVIEW
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-black text-slate-950 font-heading mt-1">
@@ -208,8 +208,8 @@ export const DetailedProgramView: React.FC = () => {
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {dataScienceProgram.overview.highlights.map((item, i) => (
-                    <div key={i} className="flex items-start gap-2.5 p-3 rounded-xl bg-purple-50/60 border border-purple-100 text-xs font-semibold text-slate-800">
-                      <CheckCircle2 className="w-4 h-4 text-purple-700 flex-shrink-0 mt-0.5" />
+                    <div key={i} className="flex items-start gap-2.5 p-3 rounded-xl bg-red-50/60 border border-red-100 text-xs font-semibold text-slate-800">
+                      <CheckCircle2 className="w-4 h-4 text-red-700 flex-shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -221,13 +221,13 @@ export const DetailedProgramView: React.FC = () => {
             <div className="lg:col-span-5 space-y-6">
               <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
                 <h3 className="text-base font-extrabold text-slate-950 font-heading mb-4 flex items-center gap-2">
-                  <Users className="w-5 h-5 text-purple-700" />
+                  <Users className="w-5 h-5 text-red-700" />
                   <span>Who Should Join?</span>
                 </h3>
                 <ul className="space-y-3 text-xs text-slate-700">
                   {dataScienceProgram.overview.whoShouldJoin.map((who, i) => (
                     <li key={i} className="flex items-start gap-2.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-purple-600 mt-1.5 flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-red-600 mt-1.5 flex-shrink-0" />
                       <span>{who}</span>
                     </li>
                   ))}
@@ -285,7 +285,7 @@ export const DetailedProgramView: React.FC = () => {
                 onClick={() => setActiveTrackTab('professional')}
                 className={`px-6 py-2.5 rounded-full text-xs font-extrabold transition-all duration-200 ${
                   activeTrackTab === 'professional'
-                    ? 'bg-indigo-700 text-white shadow-md'
+                    ? 'bg-red-800 text-white shadow-md'
                     : 'text-slate-700 hover:text-slate-950'
                 }`}
               >
@@ -324,7 +324,7 @@ export const DetailedProgramView: React.FC = () => {
             ) : (
               <div className="space-y-6">
                 <div className="flex items-center gap-3">
-                  <div className="px-3 py-1 rounded-md bg-indigo-100 text-indigo-800 text-xs font-bold uppercase">
+                  <div className="px-3 py-1 rounded-md bg-red-100 text-red-900 text-xs font-bold uppercase">
                     Track B • For Working Engineers & Analysts
                   </div>
                   <span className="text-xs text-slate-500">Accelerated pace</span>
@@ -355,7 +355,7 @@ export const DetailedProgramView: React.FC = () => {
       <section id="curriculum" className="py-16 bg-white border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-xs font-extrabold text-purple-700 tracking-wider uppercase">
+            <span className="text-xs font-extrabold text-red-700 tracking-wider uppercase">
               DETAILED SYLLABUS
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 font-heading mt-1">
@@ -381,12 +381,12 @@ export const DetailedProgramView: React.FC = () => {
                     className="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-slate-50 transition-colors"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-purple-100 text-purple-800 font-extrabold flex items-center justify-center text-sm font-heading flex-shrink-0">
+                      <div className="w-10 h-10 rounded-xl bg-red-100 text-red-800 font-extrabold flex items-center justify-center text-sm font-heading flex-shrink-0">
                         {module.number}
                       </div>
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className="text-[11px] font-bold text-purple-700 uppercase">
+                          <span className="text-[11px] font-bold text-red-700 uppercase">
                             {module.weeks} • {module.phase}
                           </span>
                         </div>
@@ -397,7 +397,7 @@ export const DetailedProgramView: React.FC = () => {
                     </div>
 
                     <div className="flex items-center gap-4 text-slate-500">
-                      {isOpen ? <ChevronUp className="w-5 h-5 text-purple-700" /> : <ChevronDown className="w-5 h-5" />}
+                      {isOpen ? <ChevronUp className="w-5 h-5 text-red-700" /> : <ChevronDown className="w-5 h-5" />}
                     </div>
                   </button>
 
@@ -426,7 +426,7 @@ export const DetailedProgramView: React.FC = () => {
                         {module.tools.map((tool) => (
                           <span
                             key={tool}
-                            className="px-2 py-0.5 rounded-md bg-white border border-slate-200 text-[10px] font-bold text-purple-700"
+                            className="px-2 py-0.5 rounded-md bg-white border border-slate-200 text-[10px] font-bold text-red-700"
                           >
                             {tool}
                           </span>
@@ -434,9 +434,9 @@ export const DetailedProgramView: React.FC = () => {
                       </div>
 
                       {module.project && (
-                        <div className="p-3 rounded-xl bg-purple-100/60 border border-purple-200 text-xs">
-                          <div className="font-bold text-purple-900">Module Project</div>
-                          <p className="text-purple-800 text-[11px] mt-0.5">{module.project.publicSummary}</p>
+                        <div className="p-3 rounded-xl bg-red-100/60 border border-red-200 text-xs">
+                          <div className="font-bold text-red-900">Module Project</div>
+                          <p className="text-red-800 text-[11px] mt-0.5">{module.project.publicSummary}</p>
                         </div>
                       )}
                     </div>
@@ -451,7 +451,7 @@ export const DetailedProgramView: React.FC = () => {
       {/* 5. Tools & Technologies Stack */}
       <section id="tools" className="py-16 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-xs font-extrabold text-purple-700 tracking-wider uppercase">
+          <span className="text-xs font-extrabold text-red-700 tracking-wider uppercase">
             INDUSTRY TECH STACK
           </span>
           <h2 className="text-2xl sm:text-3xl font-black text-slate-950 font-heading mt-1 mb-8">
@@ -462,9 +462,9 @@ export const DetailedProgramView: React.FC = () => {
             {dataScienceProgram.tools.map((tool) => (
               <div
                 key={tool.name}
-                className="px-4 py-2.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-2 hover:border-purple-300 hover:shadow-md transition-all"
+                className="px-4 py-2.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-2 hover:border-red-300 hover:shadow-md transition-all"
               >
-                <Code className="w-4 h-4 text-purple-600" />
+                <Code className="w-4 h-4 text-red-600" />
                 <span className="text-xs font-bold text-slate-800">{tool.name}</span>
                 <span className="text-[10px] text-slate-400 font-normal">({tool.category})</span>
               </div>
@@ -477,7 +477,7 @@ export const DetailedProgramView: React.FC = () => {
       <section id="projects" className="py-16 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-xs font-extrabold text-purple-700 tracking-wider uppercase">
+            <span className="text-xs font-extrabold text-red-700 tracking-wider uppercase">
               PORTFOLIO READY
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 font-heading mt-1">
@@ -495,7 +495,7 @@ export const DetailedProgramView: React.FC = () => {
                 className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-card hover:shadow-card-hover transition-all flex flex-col justify-between"
               >
                 <div>
-                  <span className="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-purple-100 text-purple-800">
+                  <span className="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider bg-red-100 text-red-800">
                     {proj.type}
                   </span>
                   <h3 className="text-base font-bold text-slate-950 font-heading mt-3 mb-2 leading-snug">
@@ -534,7 +534,7 @@ export const DetailedProgramView: React.FC = () => {
       <section className="py-16 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-xs font-extrabold text-purple-700 tracking-wider uppercase">
+            <span className="text-xs font-extrabold text-red-700 tracking-wider uppercase">
               EXPERT GUIDANCE
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 font-heading mt-1">
@@ -545,12 +545,12 @@ export const DetailedProgramView: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {dataScienceProgram.instructors.map((inst, idx) => (
               <div key={idx} className="p-6 rounded-2xl bg-white border border-slate-200 shadow-card flex items-start gap-4">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-purple-700 to-indigo-600 text-white font-black text-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-red-700 to-red-700 text-white font-black text-xl flex items-center justify-center flex-shrink-0 shadow-md">
                   {inst.name.split(' ').map((n) => n[0]).join('')}
                 </div>
                 <div>
                   <h3 className="text-base font-bold text-slate-950 font-heading">{inst.name}</h3>
-                  <div className="text-xs font-bold text-purple-700">{inst.role}</div>
+                  <div className="text-xs font-bold text-red-700">{inst.role}</div>
                   <div className="text-[11px] text-slate-500 font-semibold mb-2">{inst.currentCompany} • {inst.experience}</div>
                   <p className="text-xs text-slate-600 leading-relaxed">{inst.bio}</p>
                 </div>
@@ -564,7 +564,7 @@ export const DetailedProgramView: React.FC = () => {
       <section id="faqs" className="py-16 bg-white border-b border-slate-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-extrabold text-purple-700 tracking-wider uppercase">
+            <span className="text-xs font-extrabold text-red-700 tracking-wider uppercase">
               FREQUENTLY ASKED QUESTIONS
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 font-heading mt-1">
@@ -586,7 +586,7 @@ export const DetailedProgramView: React.FC = () => {
                     <span className="text-sm font-bold text-slate-900 font-heading pr-4">
                       {faq.question}
                     </span>
-                    {isOpen ? <ChevronUp className="w-5 h-5 text-purple-700 flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-slate-400 flex-shrink-0" />}
+                    {isOpen ? <ChevronUp className="w-5 h-5 text-red-700 flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-slate-400 flex-shrink-0" />}
                   </button>
 
                   {isOpen && (
@@ -602,12 +602,12 @@ export const DetailedProgramView: React.FC = () => {
       </section>
 
       {/* 9. Final Enrollment CTA Bar */}
-      <section className="py-16 bg-gradient-to-b from-white to-purple-50/60 border-t border-slate-100">
+      <section className="py-16 bg-gradient-to-b from-white to-red-50/60 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <span className="text-xs font-black text-amber-600 uppercase tracking-widest">
             BECOME A CERTIFIED CHAMPION
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-heading max-w-2xl mx-auto leading-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-800 via-indigo-700 to-slate-900">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-heading max-w-2xl mx-auto leading-tight text-transparent bg-clip-text bg-gradient-to-r from-red-800 via-red-800 to-slate-900">
             Your Hard Work Will Pay Off. Start Today.
           </h2>
           <p className="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
@@ -624,7 +624,7 @@ export const DetailedProgramView: React.FC = () => {
               <ArrowRight className="w-5 h-5" />
             </button>
             <a
-              href="tel:+919876543210"
+              href="#"
               className="px-6 py-4 rounded-full text-sm font-bold text-slate-700 hover:text-slate-950 border border-slate-300 hover:border-slate-400 transition-all flex items-center gap-2"
             >
               <PhoneCall className="w-4 h-4 text-amber-600" />
@@ -672,7 +672,7 @@ export const DetailedProgramView: React.FC = () => {
                     setEnrollModalOpen(false);
                     setEnrollSubmitted(false);
                   }}
-                  className="px-6 py-2.5 rounded-full text-xs font-bold text-white bg-purple-700 hover:bg-purple-800"
+                  className="px-6 py-2.5 rounded-full text-xs font-bold text-white bg-red-700 hover:bg-red-800"
                 >
                   Done
                 </button>
@@ -691,7 +691,7 @@ export const DetailedProgramView: React.FC = () => {
                     type="text"
                     required
                     placeholder="Deepak Kumar"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-purple-600 focus:outline-none"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-red-600 focus:outline-none"
                   />
                 </div>
 
@@ -701,7 +701,7 @@ export const DetailedProgramView: React.FC = () => {
                     type="email"
                     required
                     placeholder="deepak@example.com"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-purple-600 focus:outline-none"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-red-600 focus:outline-none"
                   />
                 </div>
 
@@ -711,13 +711,13 @@ export const DetailedProgramView: React.FC = () => {
                     type="tel"
                     required
                     placeholder="+91 98765 43210"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-purple-600 focus:outline-none"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-red-600 focus:outline-none"
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold text-slate-700 mb-1">Preferred Track</label>
-                  <select className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-purple-600 focus:outline-none bg-white">
+                  <select className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-red-600 focus:outline-none bg-white">
                     <option>Foundations Track (Beginner / Student)</option>
                     <option>Professional Track (Working Professional)</option>
                   </select>

@@ -33,7 +33,7 @@ export const ChampionshipPrograms: React.FC = () => {
         return (
           <div className="w-20 h-16 relative flex items-center justify-center">
             {/* Network graph nodes */}
-            <svg viewBox="0 0 80 60" className="w-full h-full text-purple-600">
+            <svg viewBox="0 0 80 60" className="w-full h-full text-red-600">
               <line x1="20" y1="30" x2="40" y2="15" stroke="#C084FC" strokeWidth="2" />
               <line x1="40" y1="15" x2="60" y2="30" stroke="#C084FC" strokeWidth="2" />
               <line x1="20" y1="30" x2="40" y2="45" stroke="#C084FC" strokeWidth="2" />
@@ -197,7 +197,7 @@ export const ChampionshipPrograms: React.FC = () => {
 
         {/* Subtitle / Helper info below cards */}
         <div className="mt-8 flex items-center justify-center gap-2 text-xs text-slate-500 text-center">
-          <Info className="w-4 h-4 text-purple-600 flex-shrink-0" />
+          <Info className="w-4 h-4 text-red-600 flex-shrink-0" />
           <span>Click on any program to explore the detailed curriculum, roadmap, projects and more.</span>
         </div>
       </div>

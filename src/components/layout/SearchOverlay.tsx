@@ -99,14 +99,14 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
                       <Link
                         href={item.href}
                         onClick={onClose}
-                        className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl hover:bg-purple-50 transition-colors group"
+                        className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl hover:bg-red-50 transition-colors group"
                       >
                         <div>
-                          <div className="text-xs font-bold text-purple-700 uppercase tracking-wide">{item.group}</div>
+                          <div className="text-xs font-bold text-red-700 uppercase tracking-wide">{item.group}</div>
                           <div className="text-sm font-bold text-slate-900">{item.title}</div>
                           <div className="text-xs text-slate-500 mt-0.5">{item.description}</div>
                         </div>
-                        <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-purple-600 flex-shrink-0 transition-colors" />
+                        <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-red-600 flex-shrink-0 transition-colors" />
                       </Link>
                     </li>
                   ))}

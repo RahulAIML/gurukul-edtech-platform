@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-600">
               <li>
-                <Link href="/programs/data-science/overview" className="hover:text-purple-700 font-semibold text-purple-700 flex items-center gap-1.5">
+                <Link href="/programs/data-science/overview" className="hover:text-red-700 font-semibold text-red-700 flex items-center gap-1.5">
                   <span>Data Science (Active)</span>
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 </Link>
@@ -48,11 +48,11 @@ export const Footer: React.FC = () => {
               Experience
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-600">
-              <li><Link href="/#learning-journey" className="hover:text-purple-700">7-Step Learning Journey</Link></li>
-              <li><Link href="/#mentorship" className="hover:text-purple-700">1-on-1 Mentorship</Link></li>
-              <li><Link href="/programs/data-science/overview" className="hover:text-purple-700">24-Week Applied Roadmap</Link></li>
-              <li><Link href="/#success-stories" className="hover:text-purple-700">Placement Success Stories</Link></li>
-              <li><Link href="/programs/data-science" className="hover:text-purple-700">Curriculum Syllabus</Link></li>
+              <li><Link href="/#learning-journey" className="hover:text-red-700">7-Step Learning Journey</Link></li>
+              <li><Link href="/#mentorship" className="hover:text-red-700">1-on-1 Mentorship</Link></li>
+              <li><Link href="/programs/data-science/overview" className="hover:text-red-700">24-Week Applied Roadmap</Link></li>
+              <li><Link href="/#success-stories" className="hover:text-red-700">Placement Success Stories</Link></li>
+              <li><Link href="/programs/data-science" className="hover:text-red-700">Curriculum Syllabus</Link></li>
             </ul>
           </div>
 
@@ -62,11 +62,10 @@ export const Footer: React.FC = () => {
               Contact & Support
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-600">
-              <li><a href="mailto:admissions@gurukul.edu" className="hover:text-purple-700">admissions@gurukul.edu</a></li>
-              <li><a href="tel:+919876543210" className="hover:text-purple-700">+91 98765 43210</a></li>
-              <li><a href="#" className="hover:text-purple-700">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-purple-700">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-purple-700">Honor Code & Integrity</a></li>
+              <li><a href="mailto:admissions@gurukul.edu" className="hover:text-red-700">admissions@gurukul.edu</a></li>
+              <li><a href="#" className="hover:text-red-700">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-red-700">Terms of Service</a></li>
+              <li><a href="#" className="hover:text-red-700">Honor Code & Integrity</a></li>
             </ul>
           </div>
         </div>

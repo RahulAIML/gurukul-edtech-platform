@@ -19,14 +19,14 @@ export default function ProgramsPage() {
       <Navbar variant="light" />
 
       {/* Hero Header */}
-      <section className="bg-gradient-to-b from-purple-50/60 to-white py-14 border-b border-slate-100">
+      <section className="bg-gradient-to-b from-red-50/60 to-white py-14 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-100 text-purple-800 text-xs font-bold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-100 text-red-800 text-xs font-bold uppercase tracking-wider mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             ELITE CAREER TRACKS
           </div>
           <h1 className="text-3xl sm:text-5xl font-black text-slate-950 font-heading tracking-tight mb-4">
-            CHAMPIONSHIP <span className="text-purple-700">PROGRAMS</span>
+            CHAMPIONSHIP <span className="text-red-700">PROGRAMS</span>
           </h1>
           <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">
             Train like a champion. Interview like one too. Master industry skills, build real-world projects, and become job ready.
@@ -37,7 +37,7 @@ export default function ProgramsPage() {
       {/* Flagship Program Showcase */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl border border-purple-100 bg-gradient-to-br from-purple-50/60 via-white to-white shadow-card overflow-hidden">
+          <div className="rounded-3xl border border-red-100 bg-gradient-to-br from-red-50/60 via-white to-white shadow-card overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 sm:p-10">
               <div className="lg:col-span-5 relative h-56 sm:h-72 rounded-2xl overflow-hidden">
                 <Image
@@ -54,7 +54,7 @@ export default function ProgramsPage() {
               </div>
 
               <div className="lg:col-span-7 flex flex-col justify-center">
-                <span className="text-xs font-bold text-purple-700 uppercase tracking-wider">
+                <span className="text-xs font-bold text-red-700 uppercase tracking-wider">
                   Flagship Program • Enrolling Now
                 </span>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-950 font-heading mt-2 mb-3">
@@ -66,7 +66,7 @@ export default function ProgramsPage() {
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-semibold mb-8">
                   <div className="flex items-center gap-2 text-slate-700">
-                    <Clock className="w-4 h-4 text-purple-600" />
+                    <Clock className="w-4 h-4 text-red-600" />
                     <span>24 Weeks</span>
                   </div>
                   <div className="flex items-center gap-2 text-slate-700">
@@ -86,13 +86,13 @@ export default function ProgramsPage() {
                 <div className="flex flex-wrap gap-3.5">
                   <Link
                     href="/programs/data-science/overview"
-                    className="text-center py-3.5 px-6 rounded-xl font-bold text-sm text-purple-800 border border-purple-200 hover:border-purple-400 hover:bg-purple-50 shadow-sm transition-all"
+                    className="text-center py-3.5 px-6 rounded-xl font-bold text-sm text-red-800 border border-red-200 hover:border-red-400 hover:bg-red-50 shadow-sm transition-all"
                   >
                     View Brief Overview
                   </Link>
                   <Link
                     href="/programs/data-science"
-                    className="text-center py-3.5 px-6 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-800 hover:to-indigo-800 shadow-md transition-all flex items-center justify-center gap-2"
+                    className="text-center py-3.5 px-6 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-red-700 to-red-800 hover:from-red-800 hover:to-red-900 shadow-md transition-all flex items-center justify-center gap-2"
                   >
                     <span>Start Championship</span>
                     <ArrowRight className="w-4 h-4" />

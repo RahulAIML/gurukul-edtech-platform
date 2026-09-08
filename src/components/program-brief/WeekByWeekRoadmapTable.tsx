@@ -23,7 +23,7 @@ export const WeekByWeekRoadmapTable: React.FC = () => {
   return (
     <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-card mt-6">
       <div className="text-center pb-3 border-b border-slate-100 mb-4">
-        <h3 className="text-sm font-black text-purple-700 font-heading tracking-wider uppercase">
+        <h3 className="text-sm font-black text-red-700 font-heading tracking-wider uppercase">
           DETAILED WEEK-BY-WEEK ROADMAP (24 WEEKS)
         </h3>
       </div>
@@ -42,7 +42,7 @@ export const WeekByWeekRoadmapTable: React.FC = () => {
             </thead>
             <tbody className="divide-y divide-slate-100">
               {leftRoadmap.map((item, idx) => (
-                <tr key={idx} className={`hover:bg-purple-50/40 transition-colors ${idx % 2 === 1 ? 'bg-slate-50/50' : 'bg-white'}`}>
+                <tr key={idx} className={`hover:bg-red-50/40 transition-colors ${idx % 2 === 1 ? 'bg-slate-50/50' : 'bg-white'}`}>
                   <td className="p-2.5 font-mono font-bold text-slate-800 whitespace-nowrap">
                     {item.week}
                   </td>
@@ -74,7 +74,7 @@ export const WeekByWeekRoadmapTable: React.FC = () => {
             </thead>
             <tbody className="divide-y divide-slate-100">
               {rightRoadmap.map((item, idx) => (
-                <tr key={idx} className={`hover:bg-purple-50/40 transition-colors ${idx % 2 === 1 ? 'bg-slate-50/50' : 'bg-white'}`}>
+                <tr key={idx} className={`hover:bg-red-50/40 transition-colors ${idx % 2 === 1 ? 'bg-slate-50/50' : 'bg-white'}`}>
                   <td className="p-2.5 font-mono font-bold text-slate-800 whitespace-nowrap">
                     {item.week}
                   </td>

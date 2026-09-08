@@ -46,11 +46,11 @@ export const VideoModal: React.FC<VideoModalProps> = ({
         codeSnippet: `import pandas as pd\nimport numpy as np\n# Ingesting & analyzing 500k+ records\ndf = pd.read_sql("SELECT * FROM transactions", engine)\ninsights = df.groupby('segment').agg({'revenue': ['mean', 'sum']})`,
         tags: ['Statistics & Probability', 'NumPy & Pandas', 'Complex SQL & CTEs', 'Exploratory Data Analysis'],
         metric: 'Weeks 1–12 • Foundations Track',
-        bgGradient: 'from-slate-950 via-purple-950 to-slate-900',
+        bgGradient: 'from-slate-950 via-red-950 to-slate-900',
         icon: BookOpen,
-        iconColor: 'text-purple-400',
-        accentBorder: 'border-purple-500/50',
-        glowColor: 'bg-purple-500/20',
+        iconColor: 'text-red-400',
+        accentBorder: 'border-red-500/50',
+        glowColor: 'bg-red-500/20',
       },
       {
         id: 1,
@@ -315,7 +315,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
             {/* Progress Bar for the active scene */}
             <div className="w-full bg-slate-800/80 h-1.5 rounded-full overflow-hidden">
               <div
-                className="bg-gradient-to-r from-purple-500 via-sky-400 to-amber-400 h-full rounded-full transition-all duration-100 ease-linear"
+                className="bg-gradient-to-r from-red-500 via-sky-400 to-amber-400 h-full rounded-full transition-all duration-100 ease-linear"
                 style={{ width: `${progress}%` }}
               />
             </div>

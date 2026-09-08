@@ -33,8 +33,8 @@ export const LearningJourneyRoadmapCard: React.FC = () => {
 
         {/* Certified Champion Badge with Branching Paths */}
         <div className="relative flex flex-col items-center my-3">
-          <div className="px-3.5 py-1 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-[10px] font-black uppercase tracking-wider shadow-sm flex items-center gap-1.5">
-            <CheckCircle2 className="w-3.5 h-3.5 text-purple-600" />
+          <div className="px-3.5 py-1 rounded-full bg-red-50 border border-red-200 text-red-700 text-[10px] font-black uppercase tracking-wider shadow-sm flex items-center gap-1.5">
+            <CheckCircle2 className="w-3.5 h-3.5 text-red-600" />
             Certified Champion
           </div>
 
@@ -45,8 +45,8 @@ export const LearningJourneyRoadmapCard: React.FC = () => {
               <span className="text-[9px] text-slate-500 block mt-0.5">For Students / Beginners</span>
             </div>
 
-            <div className="p-2.5 rounded-xl bg-indigo-50 border border-indigo-200 text-center shadow-sm">
-              <span className="text-[11px] font-bold text-indigo-700 block leading-tight">Professional Track</span>
+            <div className="p-2.5 rounded-xl bg-red-50 border border-red-200 text-center shadow-sm">
+              <span className="text-[11px] font-bold text-red-800 block leading-tight">Professional Track</span>
               <span className="text-[9px] text-slate-500 block mt-0.5">For Working Professionals</span>
             </div>
           </div>
@@ -77,9 +77,9 @@ export const LearningJourneyRoadmapCard: React.FC = () => {
                 <td className="p-2 text-slate-600">ML fundamentals, guided projects</td>
               </tr>
               <tr className="hover:bg-slate-50 transition-colors">
-                <td className="p-2 font-bold text-indigo-700">Phase 2B: Professional Track</td>
+                <td className="p-2 font-bold text-red-800">Phase 2B: Professional Track</td>
                 <td className="p-2 text-slate-500 whitespace-nowrap font-mono">13–20</td>
-                <td className="p-2 text-indigo-700 font-medium">Working Professionals</td>
+                <td className="p-2 text-red-800 font-medium">Working Professionals</td>
                 <td className="p-2 text-slate-600">Applied ML, deployment, business framing</td>
               </tr>
               <tr className="hover:bg-slate-50 transition-colors">

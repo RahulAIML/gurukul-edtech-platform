@@ -65,7 +65,7 @@ export default function DynamicProgramPage({ params }: Props) {
         <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
           <Link
             href="/programs/data-science"
-            className="px-6 py-3 rounded-full text-xs font-bold text-white bg-purple-700 hover:bg-purple-800 shadow-md transition-all"
+            className="px-6 py-3 rounded-full text-xs font-bold text-white bg-red-700 hover:bg-red-800 shadow-md transition-all"
           >
             Explore Data Science Championship →
           </Link>

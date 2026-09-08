@@ -39,15 +39,15 @@ export const BriefSidebar: React.FC<BriefSidebarProps> = ({ activeSection = 'ove
         {/* Back link to Home */}
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-purple-700 transition-colors"
+          className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-red-700 transition-colors"
         >
-          <ArrowLeft className="w-4 h-4 text-purple-600" />
-          <span>Back to Landing Page</span>
+          <ArrowLeft className="w-4 h-4 text-red-600" />
+          <span>Back</span>
         </Link>
 
         {/* Program Identity Header */}
         <div className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-tr from-purple-700 to-indigo-600 flex items-center justify-center text-white flex-shrink-0 shadow-md">
+          <div className="w-10 h-10 rounded-lg bg-gradient-to-tr from-red-700 to-red-700 flex items-center justify-center text-white flex-shrink-0 shadow-md">
             <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
               <path d="M4 19h16v2H4zM4 10h4v7H4zm6-5h4v12h-4zm6 3h4v9h-4z" />
             </svg>
@@ -56,7 +56,7 @@ export const BriefSidebar: React.FC<BriefSidebarProps> = ({ activeSection = 'ove
             <h3 className="text-xs font-black text-slate-900 font-heading uppercase leading-tight">
               DATA SCIENCE
             </h3>
-            <span className="text-[10px] font-bold text-purple-700 uppercase tracking-wider block">
+            <span className="text-[10px] font-bold text-red-700 uppercase tracking-wider block">
               CHAMPIONSHIP PROGRAM
             </span>
             <span className="text-[9px] text-slate-500 block mt-0.5">
@@ -77,11 +77,11 @@ export const BriefSidebar: React.FC<BriefSidebarProps> = ({ activeSection = 'ove
                 href={item.href}
                 className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 ${
                   isActive
-                    ? 'bg-purple-50 text-purple-700 border border-purple-200 shadow-sm'
+                    ? 'bg-red-50 text-red-700 border border-red-200 shadow-sm'
                     : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
                 }`}
               >
-                <Icon className={`w-4 h-4 ${isActive ? 'text-purple-700' : 'text-slate-400'}`} />
+                <Icon className={`w-4 h-4 ${isActive ? 'text-red-700' : 'text-slate-400'}`} />
                 <span>{item.label}</span>
               </Link>
             );

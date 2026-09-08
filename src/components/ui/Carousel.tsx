@@ -74,7 +74,7 @@ export const Carousel: React.FC<CarouselProps> = ({
               aria-label={`Go to slide ${i + 1}`}
               onClick={() => emblaApi?.scrollTo(i)}
               className={`h-1.5 rounded-full transition-all duration-200 ${
-                i === selectedIndex ? 'w-6 bg-purple-700' : 'w-1.5 bg-slate-200'
+                i === selectedIndex ? 'w-6 bg-red-700' : 'w-1.5 bg-slate-200'
               }`}
             />
           ))}

@@ -15,7 +15,7 @@ export const MentorProgressSection: React.FC = () => {
           {/* Left Column: Heading & Value List (4 cols) */}
           <div className="lg:col-span-4 flex flex-col items-start">
             {/* Badge */}
-            <span className="text-xs font-black tracking-widest text-purple-700 uppercase mb-3">
+            <span className="text-xs font-black tracking-widest text-red-700 uppercase mb-3">
               YOU ARE NEVER ALONE
             </span>
 
@@ -25,7 +25,7 @@ export const MentorProgressSection: React.FC = () => {
               <br />
               Guides. Pushes You.
               <br />
-              Until <span className="text-purple-700">You&apos;re Ready.</span>
+              Until <span className="text-red-700">You&apos;re Ready.</span>
             </h2>
 
             {/* Subtitle */}
@@ -37,7 +37,7 @@ export const MentorProgressSection: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2.5 w-full">
               {mentorTrackBullets.map((item) => (
                 <div key={item} className="flex items-center gap-2.5 text-sm font-semibold text-slate-800">
-                  <CheckCircle2 className="w-5 h-5 text-purple-600 flex-shrink-0 fill-purple-100" />
+                  <CheckCircle2 className="w-5 h-5 text-red-600 flex-shrink-0 fill-red-100" />
                   <span>{item}</span>
                 </div>
               ))}
@@ -104,7 +104,7 @@ export const MentorProgressSection: React.FC = () => {
                           <div
                             key={idx}
                             className={`w-3 h-3 rounded-full ${
-                              active ? 'bg-purple-600' : 'bg-purple-200'
+                              active ? 'bg-red-600' : 'bg-red-200'
                             }`}
                           />
                         ))}
@@ -124,7 +124,7 @@ export const MentorProgressSection: React.FC = () => {
                     <span className="text-slate-600 font-medium w-28 truncate">{skill.name}</span>
                     <div className="flex-1 mx-3 h-2 bg-slate-100 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full"
+                        className="h-full bg-gradient-to-r from-red-600 to-red-700 rounded-full"
                         style={{ width: `${(skill.score / skill.maxScore) * 100}%` }}
                       />
                     </div>
@@ -146,9 +146,9 @@ export const MentorProgressSection: React.FC = () => {
 
               {/* Mentor Profile */}
               <div className="flex items-center gap-3.5 mb-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-600 to-amber-500 p-0.5 shadow-sm">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-red-600 to-amber-500 p-0.5 shadow-sm">
                   <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center text-white font-bold text-sm">
-                    RV
+                    JS
                   </div>
                 </div>
                 <div>
@@ -167,7 +167,7 @@ export const MentorProgressSection: React.FC = () => {
             {/* Message Mentor Button */}
             <button
               type="button"
-              className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-800 hover:to-indigo-800 shadow-md shadow-purple-500/20 transition-all duration-200"
+              className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-red-700 to-red-800 hover:from-red-800 hover:to-red-900 shadow-md shadow-red-500/20 transition-all duration-200"
             >
               <span>Message Mentor</span>
               <ArrowRight className="w-3.5 h-3.5" />

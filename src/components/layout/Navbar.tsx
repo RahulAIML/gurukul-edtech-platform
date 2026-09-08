@@ -75,7 +75,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
                       aria-expanded={programsMenuOpen}
                       onClick={() => setProgramsMenuOpen((v) => !v)}
                       className={`flex items-center gap-1.5 text-sm font-medium transition-colors ${
-                        isDark ? 'text-slate-200 hover:text-white' : 'text-slate-700 hover:text-purple-700'
+                        isDark ? 'text-slate-200 hover:text-white' : 'text-slate-700 hover:text-red-700'
                       }`}
                     >
                       {link.label}
@@ -101,12 +101,12 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
                       className={`flex items-center gap-1.5 text-sm font-medium transition-colors ${
                         isDark
                           ? 'text-slate-200 hover:text-white'
-                          : 'text-slate-700 hover:text-purple-700'
+                          : 'text-slate-700 hover:text-red-700'
                       }`}
                       onClick={() => setResourcesOpen(!resourcesOpen)}
                     >
                       {link.label}
-                      <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-purple-600 transition-transform duration-200 group-hover:rotate-180" />
+                      <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-red-600 transition-transform duration-200 group-hover:rotate-180" />
                     </button>
 
                     {/* Dropdown Menu */}
@@ -129,7 +129,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
                             className={`block p-2.5 rounded-lg transition-colors ${
                               isDark
                                 ? 'hover:bg-slate-800/60'
-                                : 'hover:bg-purple-50'
+                                : 'hover:bg-red-50'
                             }`}
                           >
                             <div className="text-sm font-semibold">{child.label}</div>
@@ -153,11 +153,11 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
                   className={`text-sm font-medium transition-colors ${
                     isActive
                       ? isDark
-                        ? 'text-purple-400 font-semibold'
-                        : 'text-purple-700 font-semibold'
+                        ? 'text-red-400 font-semibold'
+                        : 'text-red-700 font-semibold'
                       : isDark
                       ? 'text-slate-200 hover:text-white'
-                      : 'text-slate-700 hover:text-purple-700'
+                      : 'text-slate-700 hover:text-red-700'
                   }`}
                 >
                   {link.label}
@@ -176,7 +176,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
               className={`hidden xl:flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-medium transition-colors ${
                 isDark
                   ? 'border-slate-700 text-slate-400 hover:bg-slate-800'
-                  : 'border-slate-200 text-slate-500 hover:border-purple-300 hover:bg-purple-50/50'
+                  : 'border-slate-200 text-slate-500 hover:border-red-300 hover:bg-red-50/50'
               }`}
             >
               <Search className="w-4 h-4" />
@@ -187,7 +187,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
               onClick={() => setSearchOpen(true)}
               aria-label="Search"
               className={`xl:hidden p-2 rounded-full transition-colors ${
-                isDark ? 'text-slate-200 hover:bg-slate-800' : 'text-slate-600 hover:bg-slate-100 hover:text-purple-700'
+                isDark ? 'text-slate-200 hover:bg-slate-800' : 'text-slate-600 hover:bg-slate-100 hover:text-red-700'
               }`}
             >
               <Search className="w-5 h-5" />
@@ -198,7 +198,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
               className={`px-5 py-2 text-sm font-semibold rounded-full border transition-all duration-200 ${
                 isDark
                   ? 'border-slate-700 text-slate-200 hover:bg-slate-800 hover:text-white'
-                  : 'border-slate-200 text-slate-700 hover:border-purple-300 hover:text-purple-700 hover:bg-purple-50/50'
+                  : 'border-slate-200 text-slate-700 hover:border-red-300 hover:text-red-700 hover:bg-red-50/50'
               }`}
             >
               Login
@@ -206,7 +206,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
 
             <Link
               href="/programs/data-science"
-              className="inline-flex items-center gap-1.5 px-6 py-2.5 text-sm font-bold text-white rounded-full bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-800 hover:to-indigo-800 shadow-md hover:shadow-purple-500/25 transition-all duration-200 transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-1.5 px-6 py-2.5 text-sm font-bold text-white rounded-full bg-gradient-to-r from-red-700 to-red-800 hover:from-red-800 hover:to-red-900 shadow-md hover:shadow-red-500/25 transition-all duration-200 transform hover:-translate-y-0.5"
             >
               <span>Enroll Now</span>
               <ArrowRight className="w-4 h-4" />
@@ -265,7 +265,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
                       type="button"
                       onClick={() => setMobileProgramsOpen((v) => !v)}
                       className={`w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                        isDark ? 'text-slate-200 hover:bg-slate-800' : 'text-slate-700 hover:bg-purple-50 hover:text-purple-700'
+                        isDark ? 'text-slate-200 hover:bg-slate-800' : 'text-slate-700 hover:bg-red-50 hover:text-red-700'
                       }`}
                     >
                       {link.label}
@@ -276,7 +276,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
                         <Link
                           href="/programs/data-science"
                           onClick={() => setMobileMenuOpen(false)}
-                          className="block px-3 py-2 rounded-md text-sm font-semibold text-purple-700 bg-purple-50"
+                          className="block px-3 py-2 rounded-md text-sm font-semibold text-red-700 bg-red-50"
                         >
                           Data Science Championship Program™
                         </Link>
@@ -303,7 +303,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
                   className={`px-3 py-2 rounded-md text-base font-medium transition-colors ${
                     isDark
                       ? 'text-slate-200 hover:bg-slate-800'
-                      : 'text-slate-700 hover:bg-purple-50 hover:text-purple-700'
+                      : 'text-slate-700 hover:bg-red-50 hover:text-red-700'
                   }`}
                 >
                   {link.label}
@@ -327,7 +327,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
             <Link
               href="/programs/data-science"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-2.5 text-center text-sm font-bold text-white rounded-lg bg-gradient-to-r from-purple-700 to-indigo-700 shadow-md flex items-center justify-center gap-2"
+              className="w-full py-2.5 text-center text-sm font-bold text-white rounded-lg bg-gradient-to-r from-red-700 to-red-800 shadow-md flex items-center justify-center gap-2"
             >
               <span>Enroll Now</span>
               <ArrowRight className="w-4 h-4" />

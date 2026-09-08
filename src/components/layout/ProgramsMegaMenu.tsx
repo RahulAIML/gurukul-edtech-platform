@@ -51,7 +51,7 @@ export const ProgramsMegaMenu: React.FC<ProgramsMegaMenuProps> = ({ open, onClos
                         <Link
                           href="/programs/data-science"
                           onClick={onClose}
-                          className="flex items-center gap-2 pl-3 pr-3 py-2.5 rounded-r-lg text-sm font-bold text-purple-900 bg-purple-50 border-l-4 border-purple-600"
+                          className="flex items-center gap-2 pl-3 pr-3 py-2.5 rounded-r-lg text-sm font-bold text-red-900 bg-red-50 border-l-4 border-red-600"
                         >
                           <span
                             className="w-2 h-2 rounded-full flex-shrink-0"
@@ -80,7 +80,7 @@ export const ProgramsMegaMenu: React.FC<ProgramsMegaMenuProps> = ({ open, onClos
                   <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-3">
                     Available Program
                   </div>
-                  <div className="flex gap-4 rounded-xl border border-slate-100 p-3 hover:border-purple-200 transition-colors">
+                  <div className="flex gap-4 rounded-xl border border-slate-100 p-3 hover:border-red-200 transition-colors">
                     <div className="relative w-24 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-slate-100">
                       <Image
                         src="/assets/data_skyline.jpg"
@@ -102,7 +102,7 @@ export const ProgramsMegaMenu: React.FC<ProgramsMegaMenuProps> = ({ open, onClos
                       </p>
                       <div className="flex items-center gap-4 mt-2 text-[11px] text-slate-500 font-semibold">
                         <span className="flex items-center gap-1">
-                          <Clock className="w-3.5 h-3.5 text-purple-500" /> 24 Weeks
+                          <Clock className="w-3.5 h-3.5 text-red-500" /> 24 Weeks
                         </span>
                         <span className="flex items-center gap-1">
                           <Award className="w-3.5 h-3.5 text-amber-500" /> Certificate
@@ -115,7 +115,7 @@ export const ProgramsMegaMenu: React.FC<ProgramsMegaMenuProps> = ({ open, onClos
                     <Link
                       href="/programs/data-science/overview"
                       onClick={onClose}
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-slate-900 border border-slate-300 hover:border-purple-400 hover:text-purple-700 transition-colors"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-slate-900 border border-slate-300 hover:border-red-400 hover:text-red-700 transition-colors"
                     >
                       <span>View Program</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -123,7 +123,7 @@ export const ProgramsMegaMenu: React.FC<ProgramsMegaMenuProps> = ({ open, onClos
                     <Link
                       href="/programs/data-science"
                       onClick={onClose}
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-white bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-800 hover:to-indigo-800 shadow-sm transition-all"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-white bg-gradient-to-r from-red-700 to-red-800 hover:from-red-800 hover:to-red-900 shadow-sm transition-all"
                     >
                       <span>Explore Curriculum</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -136,7 +136,7 @@ export const ProgramsMegaMenu: React.FC<ProgramsMegaMenuProps> = ({ open, onClos
                       onClose();
                       onOpenSearch();
                     }}
-                    className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-purple-700 transition-colors"
+                    className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-red-700 transition-colors"
                   >
                     <Search className="w-3.5 h-3.5" />
                     <span>Search all programs →</span>
