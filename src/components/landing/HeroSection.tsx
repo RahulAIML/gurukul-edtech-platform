@@ -10,8 +10,44 @@ export const HeroSection: React.FC = () => {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
 
   return (
-    <section className="relative overflow-hidden bg-white pt-6 pb-12 lg:pt-10 lg:pb-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-white md:pt-0 pt-6 pb-12 md:pb-0 lg:pb-0">
+      {/* Desktop / Tablet: designed hero banner with real clickable CTA hotspots */}
+      <div className="hidden md:block relative w-full">
+        <div className="relative w-full aspect-[1983/793]">
+          <Image
+            src="/assets/header.png"
+            alt="Gurukul — Data Skills. Real Projects. Brighter Careers. Industry-ready skills, real-world projects and 1:1 mentor support."
+            fill
+            sizes="100vw"
+            priority
+            className="object-cover object-center"
+          />
+
+          {/* Hotspot: Explore Programs */}
+          <Link
+            href="/programs"
+            aria-label="Explore Programs"
+            className="absolute rounded-full transition-transform duration-200 hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700"
+            style={{ left: '3.78%', top: '66.08%', width: '15.69%', height: '8.07%' }}
+          >
+            <span className="sr-only">Explore Programs</span>
+          </Link>
+
+          {/* Hotspot: Watch Video */}
+          <button
+            type="button"
+            onClick={() => setVideoModalOpen(true)}
+            aria-label="Watch video — see how it works"
+            className="absolute rounded-full transition-transform duration-200 hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700"
+            style={{ left: '21.18%', top: '66.08%', width: '13.00%', height: '8.32%' }}
+          >
+            <span className="sr-only">Watch Video</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile: coded hero (real text + buttons, readable on small screens) */}
+      <div className="md:hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
           {/* Left Column: Headline & Value Proposition (5.5 cols) */}
           <div className="lg:col-span-5 flex flex-col items-start text-left z-10">
@@ -98,7 +134,6 @@ export const HeroSection: React.FC = () => {
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover object-center transform group-hover:scale-102 transition-transform duration-500"
-                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/15 via-transparent to-transparent pointer-events-none" />
               </div>
