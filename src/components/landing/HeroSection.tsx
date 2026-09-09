@@ -6,83 +6,97 @@ import Image from 'next/image';
 import { ArrowRight, Play } from 'lucide-react';
 import { VideoModal } from '@/components/ui/VideoModal';
 
+const journeySteps = ['LEARN', 'PRACTICE', 'BUILD', 'GROW', 'LEAD'];
+const impactList = ['PEOPLE', 'SKILLS', 'OPPORTUNITIES', 'REAL IMPACT'];
+
+const cursiveStyle: React.CSSProperties = {
+  fontFamily: 'Georgia, "Times New Roman", serif',
+  fontSize: 'clamp(0.95rem, 1.6vw, 1.3rem)',
+  transform: 'rotate(-4deg)',
+};
+
 export const HeroSection: React.FC = () => {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
 
   return (
-    <section className="relative overflow-hidden bg-white md:pt-0 pt-6 pb-12 md:pb-0 lg:pb-0">
-      {/* Desktop / Tablet: designed hero banner with real clickable CTA hotspots */}
-      <div className="hidden md:block relative w-full">
-        <div className="relative w-full aspect-[1983/793]">
+    <section className="relative bg-white overflow-hidden">
+      {/* ============== DESKTOP / LARGE TABLET (lg+) ============== */}
+      <div className="hidden lg:block relative min-h-[560px]">
+        {/* Artwork: fills the right ~58% of the viewport, full bleed to the edge */}
+        <div className="absolute inset-y-0 right-0 w-[58%]">
           <Image
-            src="/assets/header.png"
-            alt="Gurukul — Data Skills. Real Projects. Brighter Careers. Industry-ready skills, real-world projects and 1:1 mentor support."
+            src="/assets/hero_artwork.jpg"
+            alt="A climber plants a Gurukul flag at a mountain summit, a red road winding down through the peaks to a city skyline below — symbolizing the journey from learning to real opportunity."
             fill
-            sizes="100vw"
+            sizes="58vw"
             priority
             className="object-cover object-center"
           />
+          {/* Soft left-edge blend into the white page background */}
+          <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white via-white/70 to-transparent pointer-events-none" />
 
-          {/* Hotspot: Explore Programs */}
-          <Link
-            href="/programs"
-            aria-label="Explore Programs"
-            className="absolute rounded-full transition-transform duration-200 hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700"
-            style={{ left: '3.78%', top: '66.08%', width: '15.69%', height: '8.07%' }}
-          >
-            <span className="sr-only">Explore Programs</span>
-          </Link>
+          {/* Overlay: PEOPLE / SKILLS / OPPORTUNITIES / REAL IMPACT */}
+          <ul className="absolute top-[11%] right-[7%] border-l-2 border-red-600 pl-3 space-y-0.5 text-right">
+            {impactList.map((item) => (
+              <li key={item} className="text-[11px] font-bold tracking-wider text-slate-900">
+                {item}
+              </li>
+            ))}
+          </ul>
 
-          {/* Hotspot: Watch Video */}
-          <button
-            type="button"
-            onClick={() => setVideoModalOpen(true)}
-            aria-label="Watch video — see how it works"
-            className="absolute rounded-full transition-transform duration-200 hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700"
-            style={{ left: '21.18%', top: '66.08%', width: '13.00%', height: '8.32%' }}
-          >
-            <span className="sr-only">Watch Video</span>
-          </button>
+          {/* Overlay: cursive "From Learning to Real Opportunities" */}
+          <div className="absolute top-[33%] right-[6%] w-[36%] text-right pointer-events-none">
+            <p className="text-slate-900 italic leading-tight" style={cursiveStyle}>
+              From Learning
+              <br />
+              to <span className="font-semibold">Real Opportunities</span>
+            </p>
+            <svg viewBox="0 0 160 24" className="w-40 h-6 ml-auto text-red-600" fill="none">
+              <path d="M2 18C40 4 110 4 158 14" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+            </svg>
+          </div>
+
+          {/* Overlay: dark badge with LEARN / PRACTICE / BUILD / GROW / LEAD */}
+          <div className="absolute top-[57%] left-[42%] rounded-2xl bg-slate-950/55 backdrop-blur-[2px] px-4 py-3 space-y-1.5">
+            {journeySteps.map((step) => (
+              <div key={step} className="flex items-center gap-2">
+                <span className="w-3 h-[2px] bg-red-500" />
+                <span className="text-[11px] font-bold tracking-wider text-white">{step}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Mobile: coded hero (real text + buttons, readable on small screens) */}
-      <div className="md:hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
-          {/* Left Column: Headline & Value Proposition (5.5 cols) */}
-          <div className="lg:col-span-5 flex flex-col items-start text-left z-10">
-            {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-red-800 text-[11px] font-bold tracking-wider uppercase mb-5 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
-              INDUSTRY-ALIGNED. MENTOR-DRIVEN. RESULT-FOCUSED.
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+          <div className="max-w-md pt-14 pb-16">
+            {/* Eyebrow */}
+            <div className="flex items-center gap-2.5 mb-4">
+              <span className="w-6 h-[3px] bg-red-600 rounded-full" />
+              <span className="text-xs font-bold tracking-[0.15em] text-slate-600 uppercase">
+                Learn Today. Lead Tomorrow.
+              </span>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[52px] font-black tracking-tight leading-[1.08] text-slate-950 font-heading mb-5">
-              BIG DREAMS.
-              <br />
-              HARD WORK.
-              <br />
-              REAL IMPACT.
-              <br />
-              <span className="text-slate-950">CHAMPION </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600">
-                YOUR CAREER.
-              </span>
+            {/* Headline */}
+            <h1 className="font-heading font-black tracking-tight leading-[1.05] text-4xl xl:text-5xl">
+              <span className="block text-slate-950">DATA SKILLS</span>
+              <span className="block text-slate-950">REAL PROJECTS</span>
+              <span className="block text-red-600">BRIGHTER CAREERS.</span>
             </h1>
 
-            {/* Subtitle */}
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-lg mb-7">
-              Industry-ready skills. Real-world projects. Mentor support. Career transformation.
-              <br className="hidden sm:inline" />
-              <span className="font-semibold text-slate-800"> We don&apos;t just teach. We make Champions.</span>
+            {/* Description */}
+            <p className="mt-5 text-sm text-slate-600 leading-relaxed max-w-sm">
+              Industry-ready skills. Real-world projects. 1:1 mentor support.
+              <br />
+              A learning journey designed to make you job-ready.
             </p>
 
-            {/* Call to Actions */}
-            <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
+            {/* CTAs */}
+            <div className="mt-7 flex items-center gap-5">
               <Link
                 href="/programs"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-bold text-white rounded-full bg-gradient-to-r from-red-700 via-red-800 to-red-900 hover:from-red-800 hover:to-red-900 shadow-lg shadow-red-600/30 hover:shadow-red-600/45 transition-all duration-200 transform hover:-translate-y-0.5 w-full sm:w-auto"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white bg-red-600 hover:bg-red-700 shadow-lg shadow-red-600/25 transition-all duration-200 transform hover:-translate-y-0.5"
               >
                 <span>Explore Programs</span>
                 <ArrowRight className="w-4 h-4" />
@@ -91,54 +105,88 @@ export const HeroSection: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setVideoModalOpen(true)}
-                className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full text-slate-800 hover:text-red-700 hover:bg-red-50/70 transition-all duration-200 group"
+                className="inline-flex items-center gap-2.5 group"
               >
-                <div className="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center shadow-md group-hover:scale-105 group-hover:bg-red-700 transition-all duration-200">
-                  <Play className="w-4 h-4 fill-current ml-0.5 text-white" />
-                </div>
-                <div className="text-left">
-                  <div className="text-xs font-bold text-slate-900 group-hover:text-red-700">Watch Video</div>
-                  <div className="text-[11px] text-slate-500">See how it works</div>
-                </div>
+                <span className="w-9 h-9 rounded-full border-2 border-red-600 text-red-600 flex items-center justify-center flex-shrink-0 group-hover:bg-red-600 group-hover:text-white transition-colors duration-200">
+                  <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
+                </span>
+                <span className="text-left">
+                  <span className="block text-xs font-bold text-slate-900">Watch Video</span>
+                  <span className="block text-[11px] text-slate-500">See how it works</span>
+                </span>
               </button>
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* Right Column: Hero Visual Artwork Composition (6.5 cols) */}
-          <div className="lg:col-span-7 relative flex flex-col items-center">
-            {/* Soft Ambient Background Glows */}
-            <div className="absolute -top-10 -right-10 w-96 h-96 bg-red-200/30 rounded-full blur-3xl -z-10 pointer-events-none" />
-            <div className="absolute -bottom-10 -left-10 w-80 h-80 bg-amber-100/30 rounded-full blur-3xl -z-10 pointer-events-none" />
+      {/* ============== MOBILE / TABLET (< lg) ============== */}
+      <div className="lg:hidden max-w-2xl mx-auto px-4 sm:px-6 pt-8 pb-6">
+        {/* Eyebrow */}
+        <div className="flex items-center gap-2.5 mb-3">
+          <span className="w-6 h-[3px] bg-red-600 rounded-full" />
+          <span className="text-[11px] font-bold tracking-[0.15em] text-slate-600 uppercase">
+            Learn Today. Lead Tomorrow.
+          </span>
+        </div>
 
-            <div className="relative w-full">
-              {/* Motivational Italic Note & Surging Arrow (Far Right Corner) */}
-              <div className="absolute -top-8 -right-2 z-20 text-right pointer-events-none">
-                <div className="text-[11px] sm:text-xs font-bold tracking-tight text-slate-800 italic leading-tight">
-                  <p>Discipline Today</p>
-                  <p className="text-slate-900 font-semibold">Freedom Tomorrow.</p>
-                  <p className="text-red-700 font-bold">Your Hard Work</p>
-                  <p className="text-amber-600 font-extrabold">Will Pay Off.</p>
-                </div>
-                <div className="flex justify-end mt-1">
-                  <svg width="36" height="36" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-red-600 animate-pulse">
-                    <path d="M6 40L38 8M38 8H18M38 8V28" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </div>
-              </div>
+        {/* Headline */}
+        <h1 className="font-heading font-black tracking-tight leading-[1.08] text-4xl sm:text-5xl">
+          <span className="block text-slate-950">DATA SKILLS</span>
+          <span className="block text-slate-950">REAL PROJECTS</span>
+          <span className="block text-red-600">BRIGHTER CAREERS.</span>
+        </h1>
 
-              {/* Main Photorealistic Hero Artwork */}
-              <div className="relative w-full aspect-[16/10] sm:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white ring-1 ring-slate-200/80 group mt-4">
-                <Image
-                  src="/assets/hero_learner.jpg"
-                  alt="Gurukul Data Science Student Working at Modern Desk"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover object-center transform group-hover:scale-102 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/15 via-transparent to-transparent pointer-events-none" />
-              </div>
-            </div>
-          </div>
+        {/* Description */}
+        <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
+          Industry-ready skills. Real-world projects. 1:1 mentor support. A learning journey designed to make you job-ready.
+        </p>
+
+        {/* CTAs */}
+        <div className="mt-6 flex flex-wrap items-center gap-5">
+          <Link
+            href="/programs"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white bg-red-600 hover:bg-red-700 shadow-lg shadow-red-600/25 transition-all duration-200"
+          >
+            <span>Explore Programs</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+
+          <button
+            type="button"
+            onClick={() => setVideoModalOpen(true)}
+            className="inline-flex items-center gap-2.5 group"
+          >
+            <span className="w-9 h-9 rounded-full border-2 border-red-600 text-red-600 flex items-center justify-center flex-shrink-0 group-hover:bg-red-600 group-hover:text-white transition-colors duration-200">
+              <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
+            </span>
+            <span className="text-left">
+              <span className="block text-xs font-bold text-slate-900">Watch Video</span>
+              <span className="block text-[11px] text-slate-500">See how it works</span>
+            </span>
+          </button>
+        </div>
+
+        {/* Artwork: contained card below content, keeps mobile page compact */}
+        {/* Phones: a tighter portrait crop keeps the flag + summit fully in frame */}
+        <div className="sm:hidden relative mt-8 w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
+          <Image
+            src="/assets/hero_artwork_mobile.jpg"
+            alt="A climber plants a Gurukul flag at a mountain summit, with a red road winding down through the peaks."
+            fill
+            sizes="100vw"
+            className="object-cover object-top"
+          />
+        </div>
+        {/* Tablets: the wider artwork fits a landscape card */}
+        <div className="hidden sm:block relative mt-8 w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-xl">
+          <Image
+            src="/assets/hero_artwork.jpg"
+            alt="A climber plants a Gurukul flag at a mountain summit, a red road winding down through the peaks to a city skyline below."
+            fill
+            sizes="100vw"
+            className="object-cover object-[55%_center]"
+          />
         </div>
       </div>
 

@@ -53,13 +53,13 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
           : 'bg-white border-b border-slate-100 text-slate-900'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-5 xl:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <GurukulLogo variant={isDark ? 'dark' : 'light'} />
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-7">
+          <nav className="hidden lg:flex items-center gap-2.5 xl:gap-6 whitespace-nowrap">
             {navigationLinks.map((link) => {
               if (link.label === 'Programs') {
                 return (
@@ -167,7 +167,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
           </nav>
 
           {/* Action Buttons */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2 xl:gap-3">
             {/* Persistent search pill (xl+), icon-only trigger below xl */}
             <button
               type="button"
@@ -180,7 +180,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
               }`}
             >
               <Search className="w-4 h-4" />
-              <span>What do you want to learn?</span>
+              <span className="whitespace-nowrap">What do you want to learn?</span>
             </button>
             <button
               type="button"
@@ -194,7 +194,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
             </button>
 
             <Link
-              href="/#login"
+              href="/login"
               className={`px-5 py-2 text-sm font-semibold rounded-full border transition-all duration-200 ${
                 isDark
                   ? 'border-slate-700 text-slate-200 hover:bg-slate-800 hover:text-white'
@@ -206,7 +206,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
 
             <Link
               href="/programs/data-science"
-              className="inline-flex items-center gap-1.5 px-6 py-2.5 text-sm font-bold text-white rounded-full bg-gradient-to-r from-red-700 to-red-800 hover:from-red-800 hover:to-red-900 shadow-md hover:shadow-red-500/25 transition-all duration-200 transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-1.5 px-3.5 lg:px-5 xl:px-6 py-2.5 text-xs lg:text-sm font-bold text-white rounded-full bg-gradient-to-r from-red-700 to-red-800 hover:from-red-800 hover:to-red-900 shadow-md hover:shadow-red-500/25 transition-all duration-200 transform hover:-translate-y-0.5 whitespace-nowrap flex-shrink-0"
             >
               <span>Enroll Now</span>
               <ArrowRight className="w-4 h-4" />
@@ -214,7 +214,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
           </div>
 
           {/* Mobile Menu Buttons */}
-          <div className="md:hidden flex items-center gap-1">
+          <div className="lg:hidden flex items-center gap-1">
             <button
               onClick={() => setSearchOpen(true)}
               aria-label="Search"
@@ -314,7 +314,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'light' }) => {
 
           <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2.5">
             <Link
-              href="/#login"
+              href="/login"
               onClick={() => setMobileMenuOpen(false)}
               className={`w-full py-2.5 text-center text-sm font-semibold rounded-lg border ${
                 isDark

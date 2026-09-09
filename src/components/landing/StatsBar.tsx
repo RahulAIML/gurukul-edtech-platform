@@ -22,7 +22,7 @@ export const StatsBar: React.FC = () => {
   };
 
   return (
-    <section className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 mb-16">
+    <section className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 lg:-mt-20 mb-16">
       <div className="bg-white rounded-2xl shadow-card border border-slate-100 p-6 sm:p-8">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
           {heroStatsData.map((stat, idx) => (

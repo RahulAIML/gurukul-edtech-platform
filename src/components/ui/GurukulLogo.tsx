@@ -15,17 +15,17 @@ export const GurukulLogo: React.FC<GurukulLogoProps> = ({
   const isDark = variant === 'dark';
 
   const logoSizeMap = {
-    sm: { icon: 28, text: 'text-lg', tagline: 'text-[9px]' },
-    md: { icon: 38, text: 'text-2xl', tagline: 'text-[10px]' },
-    lg: { icon: 48, text: 'text-3xl', tagline: 'text-xs' },
+    sm: { icon: 30, text: 'text-lg', tagline: 'text-[9px]' },
+    md: { icon: 40, text: 'text-2xl', tagline: 'text-[10px]' },
+    lg: { icon: 50, text: 'text-3xl', tagline: 'text-xs' },
   };
 
   const currentSize = logoSizeMap[size];
 
   return (
     <Link href="/" className="inline-flex items-center gap-2.5 group select-none">
-      {/* Golden Wreath / Crest Icon */}
-      <div className="relative flex items-center justify-center">
+      {/* Graduation Cap Mark */}
+      <div className="relative flex items-center justify-center flex-shrink-0">
         <svg
           width={currentSize.icon}
           height={currentSize.icon}
@@ -34,54 +34,40 @@ export const GurukulLogo: React.FC<GurukulLogoProps> = ({
           xmlns="http://www.w3.org/2000/svg"
           className="transition-transform duration-300 group-hover:scale-105"
         >
-          {/* Outer Laurel Leaves */}
+          {/* Cap board (top diamond) */}
           <path
-            d="M8 22C8 14.268 14.268 8 22 8M36 22C36 14.268 29.732 8 22 8"
-            stroke="url(#goldGradient)"
-            strokeWidth="2.5"
+            d="M22 8L40 17L22 26L4 17L22 8Z"
+            fill="url(#capGradient)"
+          />
+          {/* Cap band / head */}
+          <path
+            d="M13 20.5V28C13 28 16 32 22 32C28 32 31 28 31 28V20.5L22 25L13 20.5Z"
+            fill="url(#capGradientDark)"
+          />
+          {/* Tassel string */}
+          <path
+            d="M37 18.5V26.5"
+            stroke="url(#capGradient)"
+            strokeWidth="1.6"
             strokeLinecap="round"
           />
-          <path
-            d="M8 22C8 29.732 14.268 36 22 36M36 22C36 29.732 29.732 36 22 36"
-            stroke="url(#goldGradient)"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-          />
-          {/* Leaves Details */}
-          <path
-            d="M6 16C9 16 11 14 11 11M6 28C9 28 11 30 11 33M38 16C35 16 33 14 33 11M38 28C35 28 33 30 33 33"
-            stroke="url(#goldGradient)"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-          {/* Inner Flame / Wisdom Lamp / Torch */}
-          <path
-            d="M22 13C22 13 25 17 25 20C25 21.6569 23.6569 23 22 23C20.3431 23 19 21.6569 19 20C19 17 22 13 22 13Z"
-            fill="url(#flameGradient)"
-          />
-          <path
-            d="M22 23V29M17 29H27"
-            stroke="url(#goldGradient)"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-          {/* Gradients */}
+          {/* Tassel bead */}
+          <circle cx="37" cy="28.5" r="2.2" fill="url(#capGradientDark)" />
           <defs>
-            <linearGradient id="goldGradient" x1="6" y1="8" x2="38" y2="36" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#F59E0B" />
-              <stop offset="0.5" stopColor="#D97706" />
-              <stop offset="1" stopColor="#B45309" />
+            <linearGradient id="capGradient" x1="4" y1="8" x2="40" y2="26" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#EF4444" />
+              <stop offset="1" stopColor="#B91C1C" />
             </linearGradient>
-            <linearGradient id="flameGradient" x1="19" y1="13" x2="25" y2="23" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#FBBF24" />
-              <stop offset="1" stopColor="#EA580C" />
+            <linearGradient id="capGradientDark" x1="13" y1="20.5" x2="31" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#DC2626" />
+              <stop offset="1" stopColor="#7F1D1D" />
             </linearGradient>
           </defs>
         </svg>
       </div>
 
       {/* Brand Text */}
-      <div className="flex flex-col">
+      <div className="flex flex-col leading-none">
         <span
           className={`font-black tracking-wider uppercase font-heading ${currentSize.text} ${
             isDark ? 'text-white' : 'text-slate-900'
@@ -91,11 +77,11 @@ export const GurukulLogo: React.FC<GurukulLogoProps> = ({
         </span>
         {showTagline && (
           <span
-            className={`font-medium tracking-wide uppercase ${currentSize.tagline} ${
-              isDark ? 'text-amber-400/90' : 'text-amber-600'
+            className={`font-semibold tracking-[0.1em] uppercase mt-0.5 whitespace-nowrap ${currentSize.tagline} ${
+              isDark ? 'text-slate-300' : 'text-slate-500'
             }`}
           >
-            Learn. Build. Get Hired.
+            Learn &middot; Build &middot; Grow
           </span>
         )}
       </div>
