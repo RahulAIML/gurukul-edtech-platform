@@ -4,8 +4,23 @@
     {
       "name": "gurukul-dev",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
       "port": 3000
+    },
+    {
+      "name": "project-zip-preview",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "5678",
+        "--directory",
+        "project_zip_extract/project"
+      ],
+      "port": 5678
     }
   ]
 }
