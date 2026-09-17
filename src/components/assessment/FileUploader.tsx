@@ -63,7 +63,7 @@ export const FileUploader: React.FC<FileUploaderProps> = ({ disabled, onFileAcce
       <input
         ref={inputRef}
         type="file"
-        accept=".pdf,.docx,.txt,.png,.jpg,.jpeg"
+        accept=".pdf,.docx,.xlsx,.txt,.png,.jpg,.jpeg"
         disabled={disabled}
         onChange={(e) => handleFiles(e.target.files)}
         className="sr-only"
@@ -83,7 +83,7 @@ export const FileUploader: React.FC<FileUploaderProps> = ({ disabled, onFileAcce
       </span>
 
       <p className="text-[11px] text-slate-400 mt-4 tracking-wide uppercase">
-        PDF &middot; DOCX &middot; Images &middot; TXT &middot; Max {DEFAULT_MAX_UPLOAD_SIZE_MB} MB
+        PDF &middot; Word &middot; Excel &middot; Images &middot; TXT &middot; Max {DEFAULT_MAX_UPLOAD_SIZE_MB} MB
       </p>
     </div>
   );

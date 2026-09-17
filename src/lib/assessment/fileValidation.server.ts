@@ -19,6 +19,7 @@ export interface ServerFileValidationResult {
 const EXT_TO_EXPECTED_MIME: Record<string, string[]> = {
   '.pdf': ['application/pdf'],
   '.docx': ['application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/zip'],
+  '.xlsx': ['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/zip'],
   '.png': ['image/png'],
   '.jpg': ['image/jpeg'],
   '.jpeg': ['image/jpeg'],
@@ -71,7 +72,7 @@ export async function validateUploadedFile(
     return {
       valid: false,
       error:
-        'This file\'s content does not match its extension. Please upload a genuine PDF, DOCX, PNG, or JPG file.',
+        'This file\'s content does not match its extension. Please upload a genuine PDF, DOCX, XLSX, PNG, or JPG file.',
       safeFilename,
     };
   }

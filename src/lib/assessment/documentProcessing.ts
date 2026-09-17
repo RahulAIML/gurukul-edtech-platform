@@ -1,4 +1,5 @@
 import mammoth from 'mammoth';
+import * as XLSX from 'xlsx';
 
 export interface GeminiInlinePart {
   inlineData: {
@@ -27,6 +28,8 @@ export interface ProcessedSubmission {
  *   document/vision understanding reads these directly, no local parsing.
  * - DOCX: text-extracted with mammoth (pure JS, safe on serverless) since
  *   Gemini does not accept .docx as a native mimeType.
+ * - XLSX: every sheet converted to CSV-like text with SheetJS (pure JS),
+ *   since Gemini has no native spreadsheet mimeType either.
  * - TXT: read directly as UTF-8 text.
  */
 export async function buildSubmissionParts(
@@ -51,6 +54,22 @@ export async function buildSubmissionParts(
       );
     }
     return { parts: [{ text }], extractedAsText: true };
+  }
+
+  if (extension === '.xlsx') {
+    const workbook = XLSX.read(buffer, { type: 'buffer' });
+    const sheetTexts = workbook.SheetNames.map((sheetName) => {
+      const sheet = workbook.Sheets[sheetName];
+      const csv = XLSX.utils.sheet_to_csv(sheet);
+      return `Sheet: ${sheetName}\n${csv.trim()}`;
+    }).filter((sheetText) => sheetText.split('\n').slice(1).join('').trim().length > 0);
+
+    if (sheetTexts.length === 0) {
+      throw new DocumentProcessingError(
+        'No readable data could be extracted from this Excel file. It may be empty or corrupted.'
+      );
+    }
+    return { parts: [{ text: sheetTexts.join('\n\n') }], extractedAsText: true };
   }
 
   if (extension === '.txt') {

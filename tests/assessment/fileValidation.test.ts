@@ -13,6 +13,16 @@ describe('validateFileClientSide', () => {
     expect(result.valid).toBe(true);
   });
 
+  it('accepts a valid XLSX within the size limit', () => {
+    const file = makeFile(
+      'submission.xlsx',
+      1024 * 50,
+      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    );
+    const result = validateFileClientSide(file, 15);
+    expect(result.valid).toBe(true);
+  });
+
   it('rejects an unsupported extension', () => {
     const file = makeFile('script.exe', 1024);
     const result = validateFileClientSide(file, 15);

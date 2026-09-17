@@ -5,11 +5,12 @@
  * trusted as the actual security boundary.
  */
 
-export const ACCEPTED_EXTENSIONS = ['.pdf', '.docx', '.txt', '.png', '.jpg', '.jpeg'] as const;
+export const ACCEPTED_EXTENSIONS = ['.pdf', '.docx', '.xlsx', '.txt', '.png', '.jpg', '.jpeg'] as const;
 
 export const ACCEPTED_MIME_TYPES = [
   'application/pdf',
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
   'text/plain',
   'image/png',
   'image/jpeg',
@@ -39,7 +40,7 @@ export function validateFileClientSide(file: File, maxSizeMb: number): ClientVal
   if (!ACCEPTED_EXTENSIONS.includes(ext as (typeof ACCEPTED_EXTENSIONS)[number])) {
     return {
       valid: false,
-      error: `Unsupported file type "${ext || 'unknown'}". Please upload a PDF, DOCX, TXT, PNG, or JPG file.`,
+      error: `Unsupported file type "${ext || 'unknown'}". Please upload a PDF, Word (DOCX), Excel (XLSX), TXT, PNG, or JPG file.`,
     };
   }
   const maxBytes = maxSizeMb * 1024 * 1024;
